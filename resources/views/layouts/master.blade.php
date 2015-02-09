@@ -6,6 +6,7 @@
         <title>larabal.com</title>
         <link rel = "stylesheet" href= "/bootstrap/css/bootstrap.css">
         <link rel = "stylesheet" href= "/bootstrap/css/bootswatch.min.css">
+        <link rel = "stylesheet" href= "/bootstrap/css/style.css">
     </head>
     <body>
         @yield("header")

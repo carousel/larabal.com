@@ -11,23 +11,23 @@
         <div class="navbar-collapse collapse" id="navbar-main">
         <ul class="nav navbar-nav">
         <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Themes <span class="caret"></span></a>
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Link<span class="caret"></span></a>
         <ul class="dropdown-menu" aria-labelledby="themes">
-        <li><a href="#">Default</a></li>
+        <li><a href="#">Link1</a></li>
         <li class="divider"></li>
-        <li><a href="#">Cerulean</a></li>
-        <li><a href="#">Cosmo</a></li>
-        <li><a href="#">Flatly</a></li>
+        <li><a href="#">Link2</a></li>
+        <li><a href="#">Link3</a></li>
+        <li><a href="#">Link4</a></li>
         </ul>
         </li>
         <li>
-        <a href="">Help</a>
+        <a href="">Link</a>
         </li>
         <li>
-        <a href="#">Blog</a>
+        <a href="#">Link</a>
         </li>
         <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download">Download <span class="caret"></span></a>
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download">Link<span class="caret"></span></a>
         <ul class="dropdown-menu" aria-labelledby="download">
         <li><a href="#">Empty</a></li>
         <li class="divider"></li>
@@ -35,6 +35,9 @@
         <li class="divider"></li>
         <li><a href="#">Empty</a></li>
         </ul>
+            <li>
+            <a href="">Donate</a>
+            </li>
         </li>
         </ul>
 
