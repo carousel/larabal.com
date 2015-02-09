@@ -8,13 +8,10 @@ class HomeController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function getIndex()
 	{
-        $articles = [];
-        $tags = ["hello"];
-        return view('home.index')
-            ->with("articles",$articles)
-            ->with("tags",$tags);
+
+        return view('home.index');
 
 	}
 

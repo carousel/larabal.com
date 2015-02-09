@@ -11,11 +11,6 @@
 |
 */
 
-Route::get('/', 'HomeController@index');
-Route::post('subscribe', 'UserController@subscribe');
+Route::get('/','HomeController@getIndex');
 
 
-//Route::controllers([
-	//'auth' => 'Auth\AuthController',
-	//'password' => 'Auth\PasswordController',
-//]);
