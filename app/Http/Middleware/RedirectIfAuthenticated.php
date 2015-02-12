@@ -35,6 +35,7 @@ class RedirectIfAuthenticated {
 	{
 		if ($this->auth->check())
 		{
+            \Session::put("already","You are already have an account");
 			return new RedirectResponse(url('/home'));
 		}
 

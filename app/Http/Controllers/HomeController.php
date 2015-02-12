@@ -1,4 +1,5 @@
 <?php namespace App\Http\Controllers;
+use Carbon\Carbon;
 
 class HomeController extends Controller {
 
@@ -10,12 +11,10 @@ class HomeController extends Controller {
 	 */
 	public function getIndex()
 	{
-        $articles = [
-            "title" => "First article title",
-            "body" => "Curabitur a orci velit. Donec eu lacus aliquam, tincidunt leo vel, tincidunt dolor. Quisque vel tristique justo. Pellentesque ac interdum mauris. Aliquam auctor tellus non neque finibus, et mollis purus fermentum. Nunc ut leo viverra, imperdiet mauris vitae, egestas lorem. Sed vel semper neque. Fusce rhoncus, ligula et venenatis vestibulum, nisl lectus ornare neque, in dignissim ante diam vitae magna. Nullam condimentum eleifend ipsum, sed pretium erat pellentesque posuere."
-        ];
+        $date = Carbon::now()->toFormattedDateString();
+        $article = \App\Article::orderBy("id","desc")->first();
         return view('home.index')
-            ->with("articles",$articles);
+            ->with("article",$article);
 
 	}
 

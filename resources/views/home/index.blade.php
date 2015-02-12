@@ -8,16 +8,26 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 article" >
-                @foreach($articles as $article )
-                    <p class="lead">{!!$articles["title"]!!}</p>
-                        <p>
-                            {!!$articles["body"]!!}                        
-                            {!!link_to("#","read more")!!}
-                        </p>
-                @endforeach
+                <span class="pull-right">{!!$article["created_at"]->toFormattedDateString()!!}</span>
+                            <br>
+                    <h3>{!!$article["title"]!!}</h3>
+                            <br>
+                            <p>
+                            {!!$article["body"]!!}
+                            </p>
+                            <br>
+                    @if(Auth::check())
+                        @if(Auth::user()->role == "admin+")
+                        <span class="pull-right edit-link"><a href="#">Edit</a></span>
+                        @endif
+                    @endif
+                            <span class="pull-right">author:&nbsp;{!!App\User::find($article->user_id)->name!!}</span>&nbsp;&nbsp;
+                            <span>Tag: <a href="#">{!!$article["tag"]!!}</a></span>
+                            <br>
+                            <hr>
             </div>
-            <div class="col-md-4">
-                <p class="lead">sidebar (for news)</p>
+            <div class="col-md-4 news">
+                <p class="lead">News around Laravel</p>
             </div>
         </div>
     </div>

@@ -30,12 +30,12 @@ class UserTableSeeder extends Seeder {
 	public function run()
 	{
 		Model::unguard();
-
+        User::truncate();
         User::create([
-            "username" => "Miroslav",
+            "name" => "Miroslav",
             "email" => "miroslav.trninic@gmail.com",
             "password" => Hash::make("bumerang"),
-            "role" => "superadmin",
+            "role" => "admin+",
         ]);
 
 	}

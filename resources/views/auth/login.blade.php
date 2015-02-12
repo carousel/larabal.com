@@ -1,7 +1,16 @@
-@extends('app')
-
+@extends('layouts.master')
 @section('content')
 <div class="container-fluid">
+<div class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="/">Home</a></li>
+        </ul>
+    </div>
+</div>
+
+<!-- Navbar
+================================================== -->
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
 			<div class="panel panel-default">
