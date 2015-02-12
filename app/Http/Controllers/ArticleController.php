@@ -66,5 +66,10 @@ class ArticleController extends Controller {
             "advanced" => "advanced"
         ];
     }
+    public function getEdit($id)
+    {
+        $article = \App\Article::find($id);
+        return $article;
+    }
 
 }
