@@ -13,5 +13,7 @@ Route::group(["prefix" => "admin"],function()
     Route::get('/logout','Auth\AuthController@getLogout');
     Route::get('/article/create','ArticleController@getCreate');
     Route::get('/article/edit/{id}','ArticleController@getEdit');
+    Route::post('/article/edit/{id}','ArticleController@postEdit');
+    Route::get('/article/delete/{id}','ArticleController@getDelete');
     Route::post('/article/create','ArticleController@postCreate');
 });

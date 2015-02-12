@@ -16,21 +16,22 @@
                 <span>* wrap your code with <strong> {!!htmlspecialchars("</pre> ")!!}</strong>tag</span>
                 <br>
                     <p>
-                        {!!Form::open(["url"=>"/admin/article/create","method"=>"POST"])!!}
+                        {!!Form::open(["url"=>"/admin/article/edit/" . $article['id'],"method"=>"POST"])!!}
                             {!!Form::label("Title")!!}
-                            {!!Form::text("title","",["class"=>"form-control content"])!!}
+                            {!!Form::text("title",$article["title"],["class"=>"form-control content"])!!}
                             <br>
                             {!!Form::label("Body")!!}
-                            {!!Form::textarea("body","<pre></pre>",["class"=>"form-control content"])!!}
+                            {!!Form::textarea("body",$article["body"],["class"=>"form-control content"])!!}
                             <br>
                             {!!Form::label("Please select a tag")!!}
-                            {!!Form::select("tag",$tags,"",["class"=>"form-control"])!!}
+                            {!!Form::select("tag",$tags,$article["tag"],["class"=>"form-control"])!!}
                             <br>
                             {!!Form::label("Please select a level")!!}
-                            {!!Form::select("level",$levels,"",["class"=>"form-control"])!!}
+                            {!!Form::select("level",$levels,$article["level"],["class"=>"form-control"])!!}
                             <br>
-                            {!!Form::submit("Publish",["class"=>"btn btn-success pull-right"])!!}
+                            {!!Form::submit("Edit",["class"=>"btn btn-success pull-right"])!!}
                         {!!Form::close()!!}
+<br>
                     </p>
             
             </div>

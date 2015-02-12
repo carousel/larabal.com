@@ -26,3 +26,31 @@ textarea.content{
     background:#000;
     color:#fff;
 }
+a.beginner{
+
+    padding-left:5px;
+    padding-right:5px;
+    border-bottom:5px solid green;
+    /*border-radius:5px;*/
+    color:green;
+    font-weight:bold;
+}
+a.intermediate{
+    padding-bottom:4px;
+    padding-left:5px;
+    padding-right:5px;
+    border-bottom:5px solid #1E90FF;
+    /*border-radius:5px;*/
+    color:#1E90FF;
+    font-weight:bold;
+    /*background:red;*/
+}
+a.advanced{
+    padding-left:5px;
+    padding-right:5px;
+    border-bottom:5px solid red;
+    /*border-radius:5px;*/
+    /*color:white;*/
+    font-weight:bold;
+    /*background:red;*/
+}

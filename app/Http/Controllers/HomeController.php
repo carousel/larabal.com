@@ -13,8 +13,13 @@ class HomeController extends Controller {
 	{
         $date = Carbon::now()->toFormattedDateString();
         $article = \App\Article::orderBy("id","desc")->first();
+        if($article){
+            $level = $article->level ?:null;
+        }
+        $level = "";
         return view('home.index')
-            ->with("article",$article);
+            ->with("article",$article)
+            ->with("level",$level);
 
 	}
 
