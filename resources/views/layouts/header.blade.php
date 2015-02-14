@@ -10,35 +10,15 @@
         </div>
         <div class="navbar-collapse collapse" id="navbar-main">
         <ul class="nav navbar-nav">
-        <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Link<span class="caret"></span></a>
-        <ul class="dropdown-menu" aria-labelledby="themes">
-        <li><a href="#">Link1</a></li>
-        <li class="divider"></li>
-        <li><a href="#">Link2</a></li>
-        <li><a href="#">Link3</a></li>
-        <li><a href="#">Link4</a></li>
-        </ul>
-        </li>
-        <li>
-        <a href="">Link</a>
-        </li>
-        <li>
-        <a href="#">Link</a>
-        </li>
-        <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download">Link<span class="caret"></span></a>
-        <ul class="dropdown-menu" aria-labelledby="download">
-        <li><a href="#">Empty</a></li>
-        <li class="divider"></li>
-        <li><a href="#">Empty</a></li>
-        <li class="divider"></li>
-        <li><a href="#">Empty</a></li>
-        </ul>
+            <li>
+                <a href="#">About</a>
+            </li>
+            <li>
+                <a href="#">Contact</a>
+            </li>
             <li>
             <a href="#">Donate</a>
             </li>
-        </li>
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
@@ -48,11 +28,11 @@
                     <li><a href="/auth/logout" >Logout</a></li>
                 @endif
                 @if(Auth::user()->role == "admin")
-                    <li><a href="/admin" >Admin+</a></li>
+                    <li><a href="/admin" >{!!Auth::user()->role!!}</a></li>
                     <li><a href="/auth/logout" >Logout</a></li>
                 @endif
                 @if(Auth::user()->role == "admin+")
-                    <li><a href="/admin" >Admin+</a></li>
+                    <li><a href="/admin" >{!!Auth::user()->role!!}</a></li>
                     <li><a href="/auth/logout" >Logout</a></li>
                 @endif
             @endif
@@ -72,9 +52,14 @@
             <p class="lead">Welcome to Laravel Balkan journey</p>
             </div>
             <div class="col-lg-4 col-md-5 col-sm-6 subscribe">
-            {!!Form::open(["class"=>"form-inline"])!!}
-                {!!Form::label("subscribe")!!}&nbsp;
-                {!!Form::text("subscribe","",["class"=>"form-control","placeholder"=>"subscribe to our newsletter"])!!}
+                &nbsp;
+                &nbsp;
+                &nbsp;
+                &nbsp;
+                &nbsp;
+                {!!Form::open(["url"=>"subscribe","class"=>"form-inline"])!!}
+                <p class="subscribe">Subscribe to our newsletter</p>
+                {!!Form::email("email","",["class"=>"form-control","placeholder"=>"subscribe to our newsletter"])!!}
                 {!!Form::submit("submit",["class"=>"btn btn-success"])!!}
             {!!Form::close()!!}
             </div>

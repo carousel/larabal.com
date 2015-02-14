@@ -1,25 +1,31 @@
 @extends("layouts.admin")
-@section("article-form")
+@section("news-form")
         <div class="container-fluid">
             <div class="page-header">
-                <h1>Write some article</h1>
-                <span>* please wrap your code with <strong> {!!htmlspecialchars("<pre>")!!}</strong>tag</span>
+                @if($errors->all())
+                    <div class="alert alert-danger alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <ul>
+                        @foreach($errors->all() as $error)
+                            <li>{!!$error!!}</li>
+                        @endforeach
+                        </ul>
+                    </div>
+                @endif
+                <h1>Add News</h1>
                 <br>
                     <p>
-                        {!!Form::open([])!!}
-                            {!!Form::label("Heading")!!}
-                            {!!Form::text("heading","",["class"=>"form-control content"])!!}
+                        {!!Form::open(["url"=>"/admin/news/create","method"=>"POST"])!!}
+                            {!!Form::label("description")!!}
+                            {!!Form::text("description","",["class"=>"form-control content"])!!}
                             <br>
-                            {!!Form::label("Content")!!}
-                            {!!Form::textarea("content","",["class"=>"form-control content"])!!}
+                            {!!Form::label("title")!!}
+                            {!!Form::text("title","",["class"=>"form-control content"])!!}
                             <br>
-                            {!!Form::label("Please select a tag")!!}
-                            {!!Form::select("tag",$tags,"",["class"=>"form-control"])!!}
+                            {!!Form::label("href")!!}
+                            {!!Form::text("href","",["class"=>"form-control content"])!!}
                             <br>
-                            {!!Form::label("Please select a level")!!}
-                            {!!Form::select("level",$levels,"",["class"=>"form-control"])!!}
-                            <br>
-                            {!!Form::submit("Publish",["class"=>"btn btn-danger pull-right"])!!}
+                            {!!Form::submit("Publish",["class"=>"btn btn-success pull-right"])!!}
                         {!!Form::close()!!}
                     </p>
             

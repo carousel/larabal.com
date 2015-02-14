@@ -25,6 +25,9 @@
             <li>
                 <a href="/admin/article/create">Write Article</a>
             </li>
+            <li>
+                <a href="/admin/news/create">Add News</a>
+            </li>
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
@@ -53,6 +56,7 @@
 <!-- Navbar
 ================================================== -->
         @yield("article-form")
+        @yield("news-form")
         
         <script src="//code.jquery.com/jquery.js"></script>
         <script src="/bootstrap/js/bootstrap.js"></script>

@@ -10,6 +10,7 @@
         <link rel = "stylesheet" href= "/css/sunburst.css">
     </head>
     <body>
+        @include("_partials/messages")
         @yield("header")
         @yield("content")
         @yield("footer")

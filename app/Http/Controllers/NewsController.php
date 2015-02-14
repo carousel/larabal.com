@@ -5,7 +5,7 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-class ArticleController extends Controller {
+class NewsController extends Controller {
 
 	/**
 	 * Create a new controller instance.
@@ -20,52 +20,15 @@ class ArticleController extends Controller {
 
 	public function getCreate()
 	{
-        $tags = $this->articleTags();
-        $levels = $this->articleLevels();
-
-        return view("admin/articles/create")
-              ->with("tags",$tags)
-              ->with("levels",$levels);
+        return view("admin/news/create");
 	}
-	public function postCreate(Requests\CreateArticleRequest $request)
+	public function postCreate(Requests\CreateNewsRequest $request)
 	{
         $data = $request->all();
-        $data["user_id"] = \Auth::user()->id;
-        \App\Article::create($data);
+        \App\News::create($data);
         return \Redirect::to("/");
 	}
 
-    public function articleTags()
-    {
-        return $tags = [
-                "installation/configuration"=>"installation/configuration",
-                "request/input/session" => "request/input/session",
-                "security/auth" => "security/auth",
-                "routing/controllers" => "routing/controllers",
-                "errors/logging" => "errors/logging",
-                "cache" => "cache",
-                "events" => "events",
-                "view/forms" => "view/forms",
-                "laravel internals" => "laravel internals",
-                "mail" => "mail",
-                "validation" => "validation",
-                "database/eloquent/migration" => "database/eloquent/migration",
-                "artisan cli" => "artisan cli",
-                "front end" => "front end",
-                "general PHP"=>"general PHP",
-                "general development"=>"general development"
-            ];
-        
-    }
-
-    public function articleLevels()
-    {
-        return $levels = [
-            "beginner" => "beginner",
-            "intermediate" => "intermediate",
-            "advanced" => "advanced"
-        ];
-    }
     public function getEdit($id)
     {
         $tags = $this->articleTags();

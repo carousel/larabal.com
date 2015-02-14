@@ -1,5 +1,5 @@
 @extends("layouts.admin")
-@section("article-form")
+@section("news-form")
         <div class="container-fluid">
             <div class="page-header">
                 @if($errors->all())

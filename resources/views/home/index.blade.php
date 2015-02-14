@@ -5,21 +5,20 @@
 @stop
 
 @section("content")
-        @include("_partials/messages")
     <div class="container">
         <div class="row">
             <div class="col-md-8 article" >
                 @if($article)
                 <span class="pull-right">{!!$article["created_at"]->toFormattedDateString()!!}</span>
                             <br>
-                    <h3>{!!$article["title"]!!}</h3>
+                    <h3 class="disqus_title">{!!$article["title"]!!}</h3>
                             <br>
-                            <p>
+                            <p class="disqus_body">
                             {!!$article["body"]!!}
                             </p>
                             <br>
                     @if(Auth::check())
-                        @if(Auth::user()->role == "admin+")
+                        @if(Auth::user()->id == $article["user_id"])
                         <span class="pull-right edit-link"><a href="admin/article/edit/{!!$article["id"]!!}">Edit</a></span>
                         <span class="pull-right delete-link"><a href="admin/article/delete/{!!$article["id"]!!}">Delete</a></span>
                         @endif
@@ -29,11 +28,13 @@
                             <span>Tag: <a href="#">{!!$article["tag"]!!}</a></span>
                             <br>
                             <hr>
-                                        <div id="disqus_thread"></div>
+                            <div id="disqus_thread"></div>
     <script type="text/javascript">
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
         var disqus_shortname = 'larabal'; // required: replace example with your forum shortname
-
+        var disqus_identifier = document.getElementsByClassName("disqus_title")[0].innerHTML;
+        var disqus_url = "http://larabal.com/" + Math.random();
+        console.log(disqus_identifier);
         /* * * DON'T EDIT BELOW THIS LINE * * */
         (function() {
             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -49,12 +50,24 @@
 
             <div class="col-md-4 news">
                 <p class="lead">News around Laravel</p>
+                @if(count($news))
+                    @foreach($news as $new)
+                    <p>{!!$new["description"]!!}&nbsp;
+                        <span><a href={!!$new['href']!!}>{!!$new["title"]!!}</a></span>
+                    </p>
+                        <hr>
+                    @endforeach
+                @else
+                    <p class="lead">No news yet</p>
+                @endif
+
             </div>
         </div>
     </div>
   <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
     var disqus_shortname = 'larabal'; // required: replace example with your forum shortname
+    /*var disqus_identifier = Math.random();*/
 
     /* * * DON'T EDIT BELOW THIS LINE * * */
     (function () {
