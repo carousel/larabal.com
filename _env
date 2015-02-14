@@ -1,0 +1,13 @@
+APP_ENV=local
+APP_DEBUG=true
+APP_KEY=SomeRandomString
+MANDRILL_SECRET=AzM6aILHpPW4MFw6ZY0buA
+MAIL_ADDRESS=miroslav.trninic@gmail.com
+
+DB_HOST=localhost
+DB_DATABASE=larabal
+DB_USERNAME=root
+DB_PASSWORD=bumerang
+
+CACHE_DRIVER=file
+SESSION_DRIVER=file
