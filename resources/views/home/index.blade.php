@@ -33,8 +33,8 @@
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
         var disqus_shortname = 'larabal'; // required: replace example with your forum shortname
         var disqus_identifier = document.getElementsByClassName("disqus_title")[0].innerHTML;
-        var disqus_url = "http://larabal.com/" + Math.random();
-        console.log(disqus_identifier);
+        var disqus_url = "http://larabal/" + Math.random();
+        /*console.log(disqus_identifier);*/
         /* * * DON'T EDIT BELOW THIS LINE * * */
         (function() {
             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -49,7 +49,7 @@
             </div>
 
             <div class="col-md-4 news">
-                <p class="lead">News around Laravel</p>
+                <p class="lead news-heading">News around Laravel</p>
                 @if(count($news))
                     @foreach($news as $new)
                     <p>{!!$new["description"]!!}&nbsp;
@@ -67,6 +67,7 @@
   <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
     var disqus_shortname = 'larabal'; // required: replace example with your forum shortname
+    var disqus_url = "http://larabal/" + Math.random();
     /*var disqus_identifier = Math.random();*/
 
     /* * * DON'T EDIT BELOW THIS LINE * * */

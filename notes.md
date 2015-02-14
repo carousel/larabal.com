@@ -64,3 +64,11 @@
             - delete user
     services
         - subscriptions service (user can choose)
+
+
+TODO
+    - unsubsribe
+    - list of subscribers
+    - edit,delete news
+    - about,contact,DONATE
+

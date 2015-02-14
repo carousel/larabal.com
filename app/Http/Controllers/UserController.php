@@ -11,18 +11,27 @@ class UserController extends Controller {
     {
         $this->validate($request,$this->getRules());
         $email = \Request::get("email");
-        $this->sendMail($email);
+        $this->userSubscribe($email);
         return \Redirect::to("/")
             ->with("message","You are subscribed to our newsletter. Check your email.");
     }
 
-    public function sendMail($email)
+    //user subscribes
+    public function userSubscribe($email)
     {
         \Mail::send('emails.subscribe',[],function($message) use ( $email ){
             $message->to($email)
                 ->subject("larabal.com subscription");
         });
         
+    }
+    public function addToListOfSubscibers()
+    {
+        //todo - event?
+    }
+    public function sendNewsletter()
+    {
+        //todo
     }
 
     public function getRules()
