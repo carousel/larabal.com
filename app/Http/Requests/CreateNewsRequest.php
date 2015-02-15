@@ -23,7 +23,6 @@ class CreateNewsRequest extends Request {
 	{
 		return [
 			"description" => "required",
-			"title" => "required",
 			"href" => "required"
 		];
 	}

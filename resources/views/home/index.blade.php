@@ -50,11 +50,20 @@
 
             <div class="col-md-4 news">
                 <p class="lead news-heading">News around Laravel</p>
+                <hr>
                 @if(count($news))
+                    <ul class="news-feed">
                     @foreach($news as $new)
-                    <p>{!!$new["description"]!!}&nbsp;
-                        <span><a href={!!$new['href']!!}>{!!$new["title"]!!}</a></span>
-                    </p>
+                        <li>
+                            <a href={!!$new['href']!!}>{!!$new["description"]!!}</a>
+                        </li>
+                    @if(Auth::check())
+                        @if(Auth::user()->id == $new["user_id"])
+                        <span class="pull-right edit-link"><a href="admin/article/edit/{!!$article["id"]!!}">Edit</a></span>
+                        <span class="pull-right delete-link"><a href="admin/article/delete/{!!$article["id"]!!}">Delete</a></span>
+                        @endif
+                    @endif
+                    </ul>
                         <hr>
                     @endforeach
                 @else

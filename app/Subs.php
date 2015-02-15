@@ -2,21 +2,21 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class News extends Model {
-
+class Subs extends Model {
 	/**
 	 * The database table used by the model.
 	 *
 	 * @var string
 	 */
-	protected $table = 'news';
+	protected $table = 'subs';
 
 	/**
 	 * The attributes that are mass assignable.
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['description','title', 'href','user_id'];
+	protected $fillable = ['email'];
 
+	//
 
 }

@@ -19,9 +19,6 @@
                             {!!Form::label("description")!!}
                             {!!Form::text("description","",["class"=>"form-control content"])!!}
                             <br>
-                            {!!Form::label("title")!!}
-                            {!!Form::text("title","",["class"=>"form-control content"])!!}
-                            <br>
                             {!!Form::label("href")!!}
                             {!!Form::text("href","",["class"=>"form-control content"])!!}
                             <br>

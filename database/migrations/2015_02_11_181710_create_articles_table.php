@@ -16,7 +16,7 @@ class CreateArticlesTable extends Migration {
 		{
 			$table->increments('id');
 			$table->string('title');
-			$table->string('body');
+			$table->text('body');
 			$table->string('tag');
 			$table->string('level');
             $table->string("user_id");

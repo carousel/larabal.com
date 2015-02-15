@@ -67,8 +67,10 @@
 
 
 TODO
-    - unsubsribe
-    - list of subscribers
-    - edit,delete news
-    - about,contact,DONATE
+    - unsubscribe(send data with link in email)
+    - edit,delete news from index page
+    - about,contact,DONATE pages
+    - tags list
+    - user management (crud)
+
 

@@ -13,7 +13,7 @@
                     </div>
                 @endif
                 <h1>Write some article</h1>
-                <span>* wrap your code with <strong> {!!htmlspecialchars("</pre> ")!!}</strong>tag</span>
+                <span>* wrap your code with <strong> {!!htmlspecialchars("</pre> ")!!}</strong>tag, and escape "&lt;/ and &gt;"</span>
                 <br>
                     <p>
                         {!!Form::open(["url"=>"/admin/article/edit/" . $article['id'],"method"=>"POST"])!!}

@@ -30,7 +30,9 @@ class ArticleController extends Controller {
 	public function postCreate(Requests\CreateArticleRequest $request)
 	{
         $data = $request->all();
+        //$data["body"] = htmlspecialchars($data["body"]);
         $data["user_id"] = \Auth::user()->id;
+        //dd($data["body"]);
         \App\Article::create($data);
         return \Redirect::to("/");
 	}

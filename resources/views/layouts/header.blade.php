@@ -50,15 +50,10 @@
             <div class="col-lg-8 col-md-7 col-sm-6">
             <h1>larabal.com</h1>
             <p class="lead">Welcome to Laravel Balkan journey</p>
-            </div>
-            <div class="col-lg-4 col-md-5 col-sm-6 subscribe">
-                &nbsp;
-                &nbsp;
-                &nbsp;
-                &nbsp;
-                &nbsp;
+        </div>
+            <div class="col-lg-4 col-md-5 col-sm-6 subscribe-form">
                 {!!Form::open(["url"=>"subscribe","class"=>"form-inline"])!!}
-                <p class="subscribe">Subscribe to our newsletter</p>
+                {!!Form::label("subscribe: ")!!}
                 {!!Form::email("email","",["class"=>"form-control","placeholder"=>"subscribe to our newsletter"])!!}
                 {!!Form::submit("submit",["class"=>"btn btn-success"])!!}
             {!!Form::close()!!}

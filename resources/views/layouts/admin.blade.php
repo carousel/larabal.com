@@ -28,6 +28,12 @@
             <li>
                 <a href="/admin/news/create">Add News</a>
             </li>
+            <li>
+                <a href="/admin/users">Manage Users</a>
+            </li>
+            <li>
+                <a href="/admin/email">Email</a>
+            </li>
         </ul>
 
         <ul class="nav navbar-nav navbar-right">

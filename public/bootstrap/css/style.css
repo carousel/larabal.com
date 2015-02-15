@@ -10,13 +10,15 @@ a.login {
 a.logout {
     color:white!important;
 }
-.news{
+.news-heading{
     text-align:center;
 }
 p.title{
     font-weight:bold;
 }
-.subscribe{
+.subscribe-form{
+    /*float:right;*/
+    /*padding-left:10%;*/
     /*text-align:right;*/
 }
 .edit-link{
@@ -55,5 +57,8 @@ a.advanced{
     /*background:red;*/
 }
 .subscribe{
-    /*text-align:center;*/
+}
+.news-feed li{
+    list-style-type:none;
+    /*width:200px;*/
 }

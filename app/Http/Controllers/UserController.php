@@ -9,11 +9,22 @@ class UserController extends Controller {
 
     public function subscribe(\Illuminate\Http\Request $request)
     {
-        $this->validate($request,$this->getRules());
         $email = \Request::get("email");
+        $this->validate($request,$this->getRules());
+        $this->validate($request,$this->emailUniqueRules());
+
+        $subs = new \App\Subs;
+        $subs->email = $email;
+        $subs->save();
+
         $this->userSubscribe($email);
         return \Redirect::to("/")
             ->with("message","You are subscribed to our newsletter. Check your email.");
+    }
+
+    public function emailUniqueRules()
+    {
+        return ["email" => "unique:subs"];
     }
 
     //user subscribes
