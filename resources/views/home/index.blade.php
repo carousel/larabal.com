@@ -9,8 +9,7 @@
         <div class="row">
             <div class="col-md-8 article" >
                 @if($article)
-                <span class="pull-right">{!!$article["created_at"]->toFormattedDateString()!!}</span>
-                            <br>
+                <span class="pull-right date">{!!$article["created_at"]->toFormattedDateString()!!}</span>
                     <h3 class="disqus_title">{!!$article["title"]!!}</h3>
                             <br>
                             <p class="disqus_body">
@@ -52,10 +51,10 @@
                 <p class="lead news-heading">News around Laravel</p>
                 <hr>
                 @if(count($news))
-                    <ul class="news-feed">
                     @foreach($news as $new)
-                        <li>
-                            <a href={!!$new['href']!!}>{!!$new["description"]!!}</a>
+                    <ul>
+                        <li class="news-feed">
+                        <a href={!!$new['href']!!}>{!!$new["description"]!!}</a><span class="arrow">&neArr;</span>
                         </li>
                     @if(Auth::check())
                         @if(Auth::user()->id == $new["user_id"])
@@ -64,7 +63,6 @@
                         @endif
                     @endif
                     </ul>
-                        <hr>
                     @endforeach
                 @else
                     <p class="lead">No news yet</p>

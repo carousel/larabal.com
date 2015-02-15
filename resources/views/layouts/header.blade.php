@@ -36,6 +36,13 @@
                     <li><a href="/auth/logout" >Logout</a></li>
                 @endif
             @endif
+            <li>
+                {!!Form::open(["url"=>"subscribe","class"=>"form-inline subscribe-form"])!!}
+                {!!Form::label("subscribe: ")!!}
+                {!!Form::email("email","",["class"=>"form-control","placeholder"=>"subscribe to our newsletter"])!!}
+                <button type="submit" class="btn btn-success"><i class="glyphicon glyphicon-envelope"></i></button>
+            {!!Form::close()!!}
+            </li>
         </ul>
 
         </div>
@@ -49,14 +56,9 @@
         <div class="row">
             <div class="col-lg-8 col-md-7 col-sm-6">
             <h1>larabal.com</h1>
-            <p class="lead">Welcome to Laravel Balkan journey</p>
+            <p class="lead">Welcome to Laravel Balkan, a source of information about amazing <a href="http://laravel.com">Laravel</a> framework in this part of the world.</p>
         </div>
             <div class="col-lg-4 col-md-5 col-sm-6 subscribe-form">
-                {!!Form::open(["url"=>"subscribe","class"=>"form-inline"])!!}
-                {!!Form::label("subscribe: ")!!}
-                {!!Form::email("email","",["class"=>"form-control","placeholder"=>"subscribe to our newsletter"])!!}
-                {!!Form::submit("submit",["class"=>"btn btn-success"])!!}
-            {!!Form::close()!!}
             </div>
     </div>
 </div>

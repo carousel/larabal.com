@@ -56,9 +56,25 @@ a.advanced{
     font-weight:bold;
     /*background:red;*/
 }
-.subscribe{
+.subscribe-form{
+    margin-top:8px;
+    /*margin-left:1%;*/
 }
-.news-feed li{
+.news-feed{
     list-style-type:none;
-    /*width:200px;*/
+}
+span.arrow{
+    color:red;
+}
+.navbar-fixed-bottom{
+    text-align:right;
+    padding-top:20px;
+    padding-right:20px;
+}
+span.credits{
+    /*margin-bottom:3px;*/
+    /*color:red;*/
+}
+.date{
+    opacity:0.3;
 }

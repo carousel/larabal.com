@@ -9,7 +9,7 @@
                 <li><a href="#">API</a></li>
                 <li><a href="#">Support</a></li>
             </ul>-->
-            <p>Made by <a href="#" rel="nofollow">Laravel Balkan </a>Contact: <a href="mailto:info@larabal.com">info@larabal.com</a>.</p>
+            <span class="credits">made by <a href="#" rel="nofollow">Laravel Balkan </a>contact: <a href="mailto:info@larabal.com">info@larabal.com</a></span>
         </div>
     </div>
 </footer>
