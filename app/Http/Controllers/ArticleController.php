@@ -40,18 +40,18 @@ class ArticleController extends Controller {
     public function articleTags()
     {
         return $tags = [
-                "installation/configuration"=>"installation/configuration",
-                "request/input/session" => "request/input/session",
-                "security/auth" => "security/auth",
-                "routing/controllers" => "routing/controllers",
-                "errors/logging" => "errors/logging",
+                "installation-configuration"=>"installation-configuration",
+                "request-input-session" => "request-input-session",
+                "security-auth" => "security-auth",
+                "routing-controllers" => "routing-controllers",
+                "errors-logging" => "errors-logging",
                 "cache" => "cache",
                 "events" => "events",
-                "view/forms" => "view/forms",
+                "view-forms" => "view-forms",
                 "laravel internals" => "laravel internals",
                 "mail" => "mail",
                 "validation" => "validation",
-                "database/eloquent/migration" => "database/eloquent/migration",
+                "database-eloquent-migration" => "database-eloquent-migration",
                 "artisan cli" => "artisan cli",
                 "front end" => "front end",
                 "general PHP"=>"general PHP",
@@ -107,6 +107,10 @@ class ArticleController extends Controller {
                 ->with("message","You are not authorized to delete this article");
         }
             return \Redirect::to("/");
+    }
+    public function getCategory($tag)
+    {
+        return $tag;
     }
 
 }

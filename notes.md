@@ -66,10 +66,10 @@
         - subscriptions service (user can choose)
 
 #TODO
-    - unsubscribe(send data with link in email)
-    - contact
+    - categories (tags) page
     - user management (crud)
-    - format email view
+    - format email view (with css) ?
+    - social?
     - MAILMAN package
 
 

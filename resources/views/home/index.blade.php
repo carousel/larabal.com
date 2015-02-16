@@ -24,7 +24,7 @@
                     @endif
                     <!--<span class="pull-right">author:&nbsp;{!!App\User::find($article->user_id)->name!!}</span>&nbsp;-->
                             <span>Level: <a href="#" class={!!$article["level"]!!}>{!!$article["level"]!!}</a></span>&nbsp;
-                            <span>Tag: <a href="#">{!!$article["tag"]!!}</a></span>
+                            <span>Tag: <a href="/category/{!!$article["tag"]!!}">{!!$article["tag"]!!}</a></span>
                             <br>
                             <hr>
                             <div id="disqus_thread"></div>
@@ -57,6 +57,7 @@
                         <a href={!!$new['href']!!}><i class="glyphicon glyphicon-link"></i>&nbsp;{!!$new["description"]!!}</a>
                     @if(Auth::check())
                         @if(Auth::user()->id == $new["user_id"])
+                        <br>
                         <span class="pull-right edit-link"><a href="admin/news/edit/{!!$new["id"]!!}">Edit</a></span>
                         <span class="pull-right delete-link"><a href="admin/news/delete/{!!$new["id"]!!}">Delete</a></span>
                         @endif
