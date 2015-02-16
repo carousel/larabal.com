@@ -24,50 +24,51 @@ class NewsController extends Controller {
 	}
 	public function postCreate(Requests\CreateNewsRequest $request)
 	{
+        $this->validate($request,$this->getRules());
         $data = $request->all();
+        $data["user_id"] = \Auth::user()->id;
         \App\News::create($data);
         return \Redirect::to("/");
 	}
 
     public function getEdit($id)
     {
-        $tags = $this->articleTags();
-        $levels = $this->articleLevels();
-        $article = \App\Article::find($id);
-        if($article->user_id == \Auth::user()->id){
-            return view("admin/articles/edit")
-                ->with("article",$article)
-                ->with("tags",$tags)
-                ->with("levels",$levels);
+        //return $id;
+        $new = \App\News::find($id);
+        if($new->user_id == \Auth::user()->id){
+            return view("admin/news/edit")
+                ->with("new",$new);
         }else{
             return \Redirect::to("/")
-                ->with("message","You are not authorized to edit this article");
+                ->with("message","You are not authorized to edit this content");
         }
     }
-    public function postEdit($id)
+    public function postEdit(\Illuminate\Http\Request $request,$id)
     {
-        $data = \Request::all();
-        $user_id = \Auth::user()->id;
-        $article = \App\Article::where("id",$id)->first();
-        $article->title = $data["title"];
-        $article->tag = $data["tag"];
-        $article->body = $data["body"];
-        $article->level = $data["level"];
-        $article->user_id = $user_id;
-        $article->save();
-        return \Redirect::to("/");
+        $this->validate($request,$this->getRules());
+        $data = $request->all();
+        $new = \App\News::where("id",$id)->first();
+        $new["user_id"] = \Auth::user()->id;
+        $new["description"] = $data["description"];
+        $new["href"] = $data["href"];
+        $new->save();
 
+        return \Redirect::to("/");
     }
     public function getDelete($id)
     {
-        $article = \App\Article::where("id",$id)->first();
-        if($article->user_id == \Auth::user()->id){
-            $article->delete();
+        $new = \App\News::where("id",$id)->first();
+        if($new->user_id == \Auth::user()->id){
+            $new->delete();
         }else{
             return \Redirect::to("/")
-                ->with("message","You are not authorized to delete this article");
+                ->with("message","You are not authorized to delete this content");
         }
             return \Redirect::to("/");
+    }
+    public function getRules()
+    {
+        return ["description"=>"required","href"=>"required"];
     }
 
 }

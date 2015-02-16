@@ -10,14 +10,18 @@
         </div>
         <div class="navbar-collapse collapse" id="navbar-main">
         <ul class="nav navbar-nav">
-            <li>
-                <a href="#">About</a>
+            <li class="dropdown">
+            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Categories<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    @foreach($tags as $tag)
+                        <li>
+                            <a href="#">{!!$tag!!}</a>
+                        </li>
+                    @endforeach
+                </ul>
             </li>
             <li>
                 <a href="#">Contact</a>
-            </li>
-            <li>
-            <a href="#">Donate</a>
             </li>
         </ul>
 
@@ -51,15 +55,12 @@
 
 
         <div class="container">
-
         <div class="page-header" id="banner">
         <div class="row">
-            <div class="col-lg-8 col-md-7 col-sm-6">
+            <div class="col-lg-8 col-md-12 col-sm-6">
             <h1>larabal.com</h1>
-            <p class="lead">Welcome to Laravel Balkan, a source of information about amazing <a href="http://laravel.com">Laravel</a> framework in this part of the world.</p>
+            <p class="leader">Welcome to Laravel Balkan, a source of information about amazing <a href="http://laravel.com">Laravel</a> framework in this part of the world.</p>
         </div>
-            <div class="col-lg-4 col-md-5 col-sm-6 subscribe-form">
-            </div>
     </div>
 </div>
 

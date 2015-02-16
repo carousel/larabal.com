@@ -19,7 +19,7 @@ class UserController extends Controller {
 
         $this->userSubscribe($email);
         return \Redirect::to("/")
-            ->with("message","You are subscribed to our newsletter. Check your email.");
+            ->with("message_success","You are subscribed to our newsletter. Check your email.");
     }
 
     public function emailUniqueRules()
@@ -30,7 +30,9 @@ class UserController extends Controller {
     //user subscribes
     public function userSubscribe($email)
     {
-        \Mail::send('emails.subscribe',[],function($message) use ( $email ){
+        $email_unsub = \App\Subs::where("email",$email)->first();
+        $email_id = $email_unsub->id;
+        \Mail::send('emails.subscribe',["email_id" => $email_id],function($message) use ( $email ){
             $message->to($email)
                 ->subject("larabal.com subscription");
         });
@@ -48,6 +50,14 @@ class UserController extends Controller {
     public function getRules()
     {
         return ["email" => "required"];
+    }
+    public function unsubscribe($id)
+    {
+        $email = \App\Subs::where("id",$id)->first();
+        $email->delete();
+        return \Redirect::to("/")
+            ->with("message_success","You are unsubscribed from larabal.com newsletter.");
+
     }
 
 }

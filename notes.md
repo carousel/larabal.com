@@ -65,12 +65,11 @@
     services
         - subscriptions service (user can choose)
 
-
-TODO
+#TODO
     - unsubscribe(send data with link in email)
-    - edit,delete news from index page
-    - about,contact,DONATE pages
-    - tags list
+    - contact
     - user management (crud)
+    - format email view
+    - MAILMAN package
 
 

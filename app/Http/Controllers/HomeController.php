@@ -11,6 +11,7 @@ class HomeController extends Controller {
 	 */
 	public function getIndex()
 	{
+        //return \App\Subs::all();
         $date = Carbon::now()->toFormattedDateString();
         $article = \App\Article::orderBy("id","desc")->first();
         $news = \App\News::orderBy("id","desc")->limit(10)->get();
@@ -21,8 +22,31 @@ class HomeController extends Controller {
         return view('home.index')
             ->with("article",$article)
             ->with("level",$level)
-            ->with("news",$news);
+            ->with("news",$news)
+            ->with("tags",$this->articleTags());
 
 	}
+    public function articleTags()
+    {
+        return $tags = [
+                "installation/configuration"=>"installation/configuration",
+                "request/input/session" => "request/input/session",
+                "security/auth" => "security/auth",
+                "routing/controllers" => "routing/controllers",
+                "errors/logging" => "errors/logging",
+                "cache" => "cache",
+                "events" => "events",
+                "view/forms" => "view/forms",
+                "laravel internals" => "laravel internals",
+                "mail" => "mail",
+                "validation" => "validation",
+                "database/eloquent/migration" => "database/eloquent/migration",
+                "artisan cli" => "artisan cli",
+                "front end" => "front end",
+                "general PHP"=>"general PHP",
+                "general development"=>"general development"
+            ];
+        
+    }
 
 }

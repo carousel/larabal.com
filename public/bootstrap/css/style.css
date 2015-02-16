@@ -1,5 +1,8 @@
 #banner{
-    min-height:200px;
+    min-height:100px;
+    /*background:#000;*/
+    border-bottom:dotted #ccc 2px;
+    margin-bottom:50px;
 }
 .article{
     padding:0px;
@@ -21,8 +24,13 @@ p.title{
     /*padding-left:10%;*/
     /*text-align:right;*/
 }
-.edit-link{
-    margin-left:10px;
+span.edit-link a {
+    margin-left:10px!important;
+    color:red!important;
+}
+span.delete-link a{
+    color:red!important;
+    margin-bottom:10px;
 }
 textarea.content{
     background:#000;
@@ -62,6 +70,7 @@ a.advanced{
 }
 .news-feed{
     list-style-type:none;
+    margin-bottom:30px;
 }
 span.arrow{
     color:red;
