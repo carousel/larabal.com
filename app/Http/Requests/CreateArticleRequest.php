@@ -22,7 +22,7 @@ class CreateArticleRequest extends Request {
 	public function rules()
 	{
 		return [
-			"title" => "required",
+			"title" => "required|unique:articles",
 			"body" => "required",
 			"tag"     => "required",
 			"level"   => "required",

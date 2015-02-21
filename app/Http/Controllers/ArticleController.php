@@ -108,9 +108,13 @@ class ArticleController extends Controller {
         }
             return \Redirect::to("/");
     }
-    public function getCategory($tag)
+
+    public function groupCategories($tag)
     {
-        return $tag;
+        $categories = \App\Article::where("tag",$tag)->get();
+        return view("categories.index")
+            ->with("categories",$categories)
+            ->with("tag",$tag);
     }
 
 }

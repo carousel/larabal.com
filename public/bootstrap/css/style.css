@@ -87,3 +87,6 @@ span.credits{
 .date{
     opacity:0.3;
 }
+.category{
+    list-style-type:none;
+}
