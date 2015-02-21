@@ -67,9 +67,9 @@
 
 #TODO
     - categories (tags) page
-    - user management (crud)
     - format email view (with css) ?
     - social?
+    - user management (crud)
     - MAILMAN package
 
 

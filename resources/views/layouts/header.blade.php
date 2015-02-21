@@ -21,6 +21,9 @@
                 </ul>
             </li>
             <li>
+            <a href="#">Resources</a>
+            </li>
+            <li>
             <a href="mailto:miroslav.trninic@gmail.com">Contact</a>
             </li>
         </ul>
