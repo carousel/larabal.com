@@ -8,6 +8,9 @@ Route::post('/auth/login','Auth\AuthController@postLogin');
 Route::get('/auth/logout','Auth\AuthController@getLogout');
 Route::get("/users/unsubscribe/{id}","UserController@unsubscribe");
 Route::get("/category/{tag}","ArticleController@groupCategories");
+Route::get("/category/show/{id}","ArticleController@show");
+Route::post("/search","ArticleController@search");
+Route::get("/resources","ResourcesController@getIndex");
 
 Route::group(["prefix" => "admin"],function()
 {
@@ -26,4 +29,10 @@ Route::group(["prefix" => "admin"],function()
     Route::get('/news/edit/{id}','NewsController@getEdit');
     Route::post('/news/edit/{id}','NewsController@postEdit');
     Route::get('/news/delete/{id}','NewsController@getDelete');
+
+    Route::get('/resources/create','ResourcesController@getCreate');
+    Route::post('/resources/create','ResourcesController@postCreate');
+    Route::get('/resources/edit/{id}','ResourcesController@getEdit');
+    Route::post('/resources/edit/{id}','ResourcesController@postEdit');
+    Route::get('/resources/delete/{id}','ResourcesController@getDelete');
 });

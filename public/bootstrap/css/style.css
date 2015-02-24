@@ -1,9 +1,32 @@
-@import url(http://fonts.googleapis.com/css?family=Source+Code+Pro:400,500,600,700);
-@import url(http://fonts.googleapis.com/css?family=Inconsolata:400,700);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,200italic,300italic,400italic,600italic,700italic);
+ul,li{
+    font-family:"Source Sans Pro",sans-serif!important;
+    font-weight:300!important;
+
+}
+span,p,a,label,button{
+    font-family:"Source Sans Pro",sans-serif!important;
+    font-weight:300!important;
+
+}
+html{
+    font-family:"Source Sans Pro",sans-serif;
+    font-weight:300;
+
+}
+body{
+    font-family:"Source Sans Pro",sans-serif;
+    font-weight:300;
+
+}
+h1,h2,h3,h4,h5{
+    font-family:"Source Sans Pro",sans-serif;
+    font-weight:300;
+}
 #banner{
     min-height:100px;
-    font-family:Inconsolata;
-    font-weight:bolder;
+    font-family:"Source Sans Pro",sans-serif;
+    font-weight:300;
     width:100%;
     /*background:#777;*/
     margin-bottom:30px;
@@ -24,13 +47,11 @@ a.logout {
     text-align:center;
     font-weight:bold;
 }
-.news-feed a{
-    /*color:#006400;*/
-}
 p.title{
     font-weight:bold;
 }
 .subscribe-form{
+    margin-right:10px;
     /*float:right;*/
     /*padding-left:10%;*/
     /*text-align:right;*/
@@ -81,15 +102,14 @@ a.advanced{
 }
 .news-feed{
     list-style-type:none;
-    margin-bottom:30px;
-    margin-top:35px;
+    /*margin-bottom:30px;*/
+    /*margin-top:35px;*/
 }
 span.arrow{
     color:red;
 }
 .navbar-fixed-bottom{
     text-align:right;
-    padding-top:20px;
     padding-right:20px;
 }
 span.credits{
@@ -102,11 +122,26 @@ span.credits{
 .category{
     list-style-type:none;
 }
+.category-match{
+    margin-top:30px;
+}
 th,td{
     padding:7px;
 }
-.search{
-    /*width:100%;*/
-    /*margin-left:0px!important;*/
+.filter-by{
+    text-align:center;
+    margin-top:50px!important;
+    margin-bottom:50px!important;
+    /*width:10%!important;*/
 
+}
+.resource-url{
+    list-style-type:none;
+}
+.list-unstyled{
+    margin:0px;
+    height:20px;
+}
+.foot{
+    margin-top:1%;
 }

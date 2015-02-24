@@ -12,7 +12,7 @@
     </head>
     <body>
 <div class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
+    <div class="container-fluid">
         <div class="navbar-header">
         <a href="/" class="navbar-brand">larabal.com</a>
         <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
@@ -34,7 +34,7 @@
                 </ul>
             </li>
             <li>
-            <a href="#">Resources</a>
+            <a href="/resources">Resources</a>
             </li>
             <li>
             <a href="mailto:miroslav.trninic@gmail.com">Contact</a>
@@ -42,21 +42,6 @@
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="/auth/login" class="login">Login</a></li>
-            @if(Auth::user())
-                @if(Auth::user()->role == "user")
-                    <li><a href="/auth/logout" >Logout</a></li>
-                @endif
-                @if(Auth::user()->role == "admin")
-                    <li><a href="/admin" >{!!Auth::user()->role!!}</a></li>
-                    <li><a href="/auth/logout" >Logout</a></li>
-                @endif
-                @if(Auth::user()->role == "admin+")
-                    <li><a href="/admin" >{!!Auth::user()->role!!}</a></li>
-                    <li><a href="/auth/logout" >Logout</a></li>
-                @endif
-            @endif
-            <li>
                 {!!Form::open(["url"=>"subscribe","class"=>"form-inline subscribe-form"])!!}
                 {!!Form::label("subscribe: ")!!}
                 {!!Form::email("email","",["class"=>"form-control","placeholder"=>"subscribe to our newsletter"])!!}

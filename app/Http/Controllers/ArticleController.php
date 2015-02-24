@@ -14,7 +14,7 @@ class ArticleController extends Controller {
 	 */
 	public function __construct()
 	{
-        $this->middleware('auth',['except' => "groupCategories"]);
+        $this->middleware('auth',['except' => ["groupCategories","show","search"]]);
 	}
 
 
@@ -77,6 +77,16 @@ class ArticleController extends Controller {
         return view("categories.index")
             ->with("categories",$categories)
             ->with("tag",$tag);
+    }
+    public function show($id)
+    {
+        $article = \App\Article::where("id",$id)->first();
+        return view("categories.show",compact("article"));
+    }
+    public function search(Request $request)
+    {
+        dd($request->all());
+        
     }
 
 }

@@ -16,12 +16,12 @@
                 <br>
                     <p>
                     <p>
-                        {!!Form::open(["url"=>"/admin/resources/create","method"=>"POST"])!!}
+                        {!!Form::open(["url"=>"/admin/resources/edit/" . $resource["id"],"method"=>"POST"])!!}
                             {!!Form::label("description")!!}
-                            {!!Form::textarea("description","",["class"=>"form-control","placeholder"=>"say something about this"])!!}
+                            {!!Form::textarea("description",$resource["description"],["class"=>"form-control","placeholder"=>"say something about this"])!!}
                             <br>
                             {!!Form::label("url")!!}
-                            {!!Form::text("url","",["class"=>"form-control content","placeholder"=>"enter url"])!!}
+                            {!!Form::text("url",$resource["url"],["class"=>"form-control content","placeholder"=>"enter url"])!!}
                             <br>
                             {!!Form::submit("Publish",["class"=>"btn btn-success pull-right"])!!}
                         {!!Form::close()!!}

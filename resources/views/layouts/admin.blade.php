@@ -29,6 +29,9 @@
                 <a href="/admin/news/create">Add News</a>
             </li>
             <li>
+                <a href="/admin/resources/create">Add Resource</a>
+            </li>
+            <li>
                 <a href="/admin/users">Manage Users</a>
             </li>
             <li>
