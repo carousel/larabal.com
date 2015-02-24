@@ -68,7 +68,7 @@ class NewsController extends Controller {
     }
     public function getRules()
     {
-        return ["description"=>"required","href"=>"required"];
+        return ["description"=>"required|max:30","href"=>"required"];
     }
 
 }

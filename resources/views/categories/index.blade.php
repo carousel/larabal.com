@@ -7,7 +7,7 @@
         {!!Form::open(["url"=>"/search",""=>"","class"=>"form-inline"])!!}
             {!!Form::label("search_by_title")!!}
             {!!Form::text("search_by_title","",["class"=>"form-control"])!!}
-
+            &nbsp;
             {!!Form::label("or_date_published")!!}
             {!!Form::select("or_date_published",["< week"=>"< week","< month"=>"< month","<  three months"=>"< three months"],"",["class"=>"form-control select"])!!}
 
@@ -36,7 +36,7 @@
         @endif
         @else
         @if(count($categories) > 0)
-            @if(count($categories) == 1))
+            @if(count($categories) == 1)
                 <h3>{!!count($categories) . " article found in " . $tag . " category"!!}</h3>
             @endif
             @if(count($categories) > 1))
@@ -65,3 +65,6 @@
         @endif
     </div>
 @endsection
+@section("footer")
+    @include("layouts.footer")
+@stop

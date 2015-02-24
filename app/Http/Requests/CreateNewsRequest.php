@@ -22,7 +22,7 @@ class CreateNewsRequest extends Request {
 	public function rules()
 	{
 		return [
-			"description" => "required",
+			"description" => "required|max:30",
 			"href" => "required"
 		];
 	}

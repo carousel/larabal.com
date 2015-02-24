@@ -23,7 +23,7 @@
                         @endif
                     @endif
                     <!--<span class="pull-right">author:&nbsp;{!!App\User::find($article->user_id)->name!!}</span>&nbsp;-->
-                            <span>Level: <a href="#" class={!!$article["level"]!!}>{!!$article["level"]!!}</a></span>&nbsp;
+                            Level:<span class={!!$article["level"]!!}>{!!$article["level"]!!}</span>&nbsp;
                             <span>Tag: <a href="/category/{!!$article["tag"]!!}">{!!$article["tag"]!!}</a></span>
                             <br>
                             <hr>
@@ -47,22 +47,20 @@
             @endif
             </div>
 
-            <div class="col-md-4 news">
+            <div class="col-md-3 col-md-offset-1 news">
                 <p class="lead news-heading">News around Laravel</p>
                 @if(count($news))
-                    <ul>
+                    <ul class="news-wrapper">
                     @foreach($news as $new)
                         <li class="news-feed">
-                        <br>
                         <a href="{!!$new['href']!!}">{!!$new["description"]!!}</a>
-                    @if(Auth::check())
-                        @if(Auth::user()->id == $new["user_id"])
-                        <br>
-                        <span class="pull-right edit-link"><a href="admin/news/edit/{!!$new["id"]!!}">Edit</a></span>
-                        <span class="pull-right delete-link"><a href="admin/news/delete/{!!$new["id"]!!}">Delete</a></span>
-                        @endif
+                            @if(Auth::check())
+                                @if(Auth::user()->id == $new["user_id"])
+                                <span class="pull-right edit-link"><a href="admin/news/edit/{!!$new["id"]!!}">E</a></span>
+                                <span class="pull-right delete-link"><a href="admin/news/delete/{!!$new["id"]!!}">D</a></span>
+                                @endif
+                            @endif
                         </li>
-                    @endif
                     @endforeach
                     </ul>
                 @else

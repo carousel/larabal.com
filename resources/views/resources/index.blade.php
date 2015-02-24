@@ -26,3 +26,6 @@
     </div>
 @stop
 
+@section("footer")
+    @include("layouts.footer")
+@stop

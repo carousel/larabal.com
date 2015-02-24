@@ -66,11 +66,11 @@
         - subscriptions service (user can choose)
 
 #TODO
-    - categories (tags) page
     - format email view (with css) ?
     - social?
     - user management (crud)
     - search
+    - contact
     - MAILMAN package
 
 

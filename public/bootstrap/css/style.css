@@ -1,32 +1,33 @@
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,200italic,300italic,400italic,600italic,700italic);
 ul,li{
     font-family:"Source Sans Pro",sans-serif!important;
-    font-weight:300!important;
+    font-weight:400!important;
 
 }
 span,p,a,label,button{
     font-family:"Source Sans Pro",sans-serif!important;
-    font-weight:300!important;
+    font-weight:400!important;
+    font-size:16px;
 
 }
 html{
     font-family:"Source Sans Pro",sans-serif;
-    font-weight:300;
+    font-weight:400;
 
 }
 body{
     font-family:"Source Sans Pro",sans-serif;
-    font-weight:300;
+    font-weight:400;
 
 }
 h1,h2,h3,h4,h5{
     font-family:"Source Sans Pro",sans-serif;
-    font-weight:300;
+    font-weight:400;
 }
 #banner{
     min-height:100px;
     font-family:"Source Sans Pro",sans-serif;
-    font-weight:300;
+    font-weight:400;
     width:100%;
     /*background:#777;*/
     margin-bottom:30px;
@@ -44,8 +45,11 @@ a.logout {
     color:white!important;
 }
 .news-heading{
+    color:#f8f8f8;
+    background:#444;
     text-align:center;
     font-weight:bold;
+    margin-bottom:0px;
 }
 p.title{
     font-weight:bold;
@@ -64,11 +68,10 @@ span.delete-link a{
     color:red!important;
     margin-bottom:10px;
 }
-textarea.content{
-    background:#000;
-    color:#fff;
+pre.prettyprint{
+    font-family:"Consolas";
 }
-a.beginner{
+span.beginner{
 
     padding-left:5px;
     padding-right:5px;
@@ -77,7 +80,7 @@ a.beginner{
     color:green;
     font-weight:bold;
 }
-a.intermediate{
+span.intermediate{
     padding-bottom:4px;
     padding-left:5px;
     padding-right:5px;
@@ -87,7 +90,7 @@ a.intermediate{
     font-weight:bold;
     /*background:red;*/
 }
-a.advanced{
+span.advanced{
     padding-left:5px;
     padding-right:5px;
     border-bottom:5px solid red;
@@ -102,8 +105,9 @@ a.advanced{
 }
 .news-feed{
     list-style-type:none;
+    height:20px;
     /*margin-bottom:30px;*/
-    /*margin-top:35px;*/
+    margin-top:0px;
 }
 span.arrow{
     color:red;
@@ -130,8 +134,8 @@ th,td{
 }
 .filter-by{
     text-align:center;
-    margin-top:50px!important;
-    margin-bottom:50px!important;
+    margin-top:70px!important;
+    margin-bottom:30px!important;
     /*width:10%!important;*/
 
 }
@@ -144,4 +148,9 @@ th,td{
 }
 .foot{
     margin-top:1%;
+}
+.news-wrapper{
+    background:#f8f8f8;
+    border:1px solid #ccf;
+    padding:10px;
 }
