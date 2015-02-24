@@ -14,18 +14,14 @@ class ArticleController extends Controller {
 	 */
 	public function __construct()
 	{
-        $this->middleware('auth',['except' => "getCategory"]);
+        $this->middleware('auth',['except' => "groupCategories"]);
 	}
 
 
 	public function getCreate()
 	{
-        $tags = $this->articleTags();
-        $levels = $this->articleLevels();
 
-        return view("admin/articles/create")
-              ->with("tags",$tags)
-              ->with("levels",$levels);
+        return view("admin/articles/create");
 	}
 	public function postCreate(Requests\CreateArticleRequest $request)
 	{
@@ -37,47 +33,13 @@ class ArticleController extends Controller {
         return \Redirect::to("/");
 	}
 
-    public function articleTags()
-    {
-        return $tags = [
-                "installation-configuration"=>"installation-configuration",
-                "request-input-session" => "request-input-session",
-                "security-auth" => "security-auth",
-                "routing-controllers" => "routing-controllers",
-                "errors-logging" => "errors-logging",
-                "cache" => "cache",
-                "events" => "events",
-                "view-forms" => "view-forms",
-                "laravel internals" => "laravel internals",
-                "mail" => "mail",
-                "validation" => "validation",
-                "database-eloquent-migration" => "database-eloquent-migration",
-                "artisan cli" => "artisan cli",
-                "front end" => "front end",
-                "general PHP"=>"general PHP",
-                "general development"=>"general development"
-            ];
-        
-    }
 
-    public function articleLevels()
-    {
-        return $levels = [
-            "beginner" => "beginner",
-            "intermediate" => "intermediate",
-            "advanced" => "advanced"
-        ];
-    }
     public function getEdit($id)
     {
-        $tags = $this->articleTags();
-        $levels = $this->articleLevels();
         $article = \App\Article::find($id);
         if($article->user_id == \Auth::user()->id){
             return view("admin/articles/edit")
-                ->with("article",$article)
-                ->with("tags",$tags)
-                ->with("levels",$levels);
+                ->with("article",$article);
         }else{
             return \Redirect::to("/")
                 ->with("message","You are not authorized to edit this article");

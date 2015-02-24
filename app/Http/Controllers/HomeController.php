@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 use Carbon\Carbon;
+use Miro\Mailman\Facades\Mailman;
 
 class HomeController extends Controller {
 
@@ -11,42 +12,31 @@ class HomeController extends Controller {
 	 */
 	public function getIndex()
 	{
+        //container
+        //$mailman = \App::make("mailman");
+        //echo $mailman->getClassName() . "<br>";
+        //facade(using namespace)
+        //echo Mailman::getClassName() . "<br>";
+        //facade /global
+        //echo \Mailman::getClassName() . "<br>";
+        //command
+        //\Artisan::call("mailman") . "<br>";
+        //echo \Mailman::getClassName();
+        //$mailman = new Mailman;
+        //$email = "miroslav.trninic@gmail.com";
+        //$mailman->send('emails.index',[],function($message) use($email){
+            //$message->to($email)
+                    //->subject("yuhuuuuu!!!");        
+        //})->goBack();
         //return \App\Subs::all();
-        $date = Carbon::now()->toFormattedDateString();
+        //$date = Carbon::now()->toFormattedDateString();
         $article = \App\Article::orderBy("id","desc")->first();
         $news = \App\News::orderBy("id","desc")->limit(10)->get();
-        if($article){
-            $level = $article->level ?:null;
-        }
         $level = "";
-        return view('home.index')
-            ->with("article",$article)
-            ->with("level",$level)
-            ->with("news",$news)
-            ->with("tags",$this->articleTags());
+        if($article){
+            $level = $article->level ?: null;
+        }
+        return view('home.index',compact("article","level","news"));
 
 	}
-    public function articleTags()
-    {
-        return $tags = [
-                "installation-configuration"=>"installation-configuration",
-                "request-input-session" => "request-input-session",
-                "security-auth" => "security-auth",
-                "routing-controllers" => "routing-controllers",
-                "errors-logging" => "errors-logging",
-                "cache" => "cache",
-                "events" => "events",
-                "view-forms" => "view-forms",
-                "laravel internals" => "laravel internals",
-                "mail" => "mail",
-                "validation" => "validation",
-                "database-eloquent-migration" => "database-eloquent-migration",
-                "artisan cli" => "artisan cli",
-                "front end" => "front end",
-                "general PHP"=>"general PHP",
-                "general development"=>"general development"
-            ];
-        
-    }
-
 }

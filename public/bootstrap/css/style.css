@@ -1,8 +1,15 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Code+Pro:400,500,600,700);
+@import url(http://fonts.googleapis.com/css?family=Inconsolata:400,700);
 #banner{
     min-height:100px;
-    /*background:#000;*/
-    border-bottom:dotted #ccc 2px;
-    margin-bottom:50px;
+    font-family:Inconsolata;
+    font-weight:bolder;
+    width:100%;
+    /*background:#777;*/
+    margin-bottom:30px;
+    margin-top:10px;
+    /*padding:10px;*/
+    /*margin:0px;*/
 }
 .article{
     padding:0px;
@@ -15,6 +22,10 @@ a.logout {
 }
 .news-heading{
     text-align:center;
+    font-weight:bold;
+}
+.news-feed a{
+    /*color:#006400;*/
 }
 p.title{
     font-weight:bold;
@@ -71,6 +82,7 @@ a.advanced{
 .news-feed{
     list-style-type:none;
     margin-bottom:30px;
+    margin-top:35px;
 }
 span.arrow{
     color:red;
@@ -89,4 +101,12 @@ span.credits{
 }
 .category{
     list-style-type:none;
+}
+th,td{
+    padding:7px;
+}
+.search{
+    /*width:100%;*/
+    /*margin-left:0px!important;*/
+
 }

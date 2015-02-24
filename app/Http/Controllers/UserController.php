@@ -1,6 +1,12 @@
 <?php namespace App\Http\Controllers;
+use Miro\Mailman\Mailman;
 
 class UserController extends Controller {
+
+    public function __construct(Mailman $mailman)
+    {
+        $this->mailman = $mailman;
+    }
 
     public function getLogin()
     {
@@ -32,7 +38,8 @@ class UserController extends Controller {
     {
         $email_unsub = \App\Subs::where("email",$email)->first();
         $email_id = $email_unsub->id;
-        \Mail::send('emails.subscribe',["email_id" => $email_id],function($message) use ( $email ){
+
+        $this->mailman->send('emails.subscribe',["email_id" => $email_id],function($message) use ( $email ){
             $message->to($email)
                 ->subject("larabal.com subscription");
         });

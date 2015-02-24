@@ -4,6 +4,37 @@ use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider {
 
+    public function levels()
+    {
+        return $levels = [
+            "beginner" => "beginner",
+            "intermediate" => "intermediate",
+            "advanced" => "advanced"
+        ];
+    }
+
+    public function tags()
+    {
+        return $tags = [
+                "installation-configuration"=>"installation-configuration",
+                "request-input-session" => "request-input-session",
+                "security-auth" => "security-auth",
+                "routing-controllers" => "routing-controllers",
+                "errors-logging" => "errors-logging",
+                "cache" => "cache",
+                "events" => "events",
+                "view-forms" => "view-forms",
+                "laravel internals" => "laravel internals",
+                "mail" => "mail",
+                "validation" => "validation",
+                "database-eloquent-migration" => "database-eloquent-migration",
+                "artisan cli" => "artisan cli",
+                "front end" => "front end",
+                "general PHP"=>"general PHP",
+                "general development"=>"general development"
+            ];
+        
+    }
 	/**
 	 * Bootstrap any application services.
 	 *
@@ -11,7 +42,8 @@ class AppServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		//
+        view()->share("tags",$this->tags());
+        view()->share("levels",$this->levels());
 	}
 
 	/**

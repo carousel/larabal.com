@@ -70,6 +70,7 @@
     - format email view (with css) ?
     - social?
     - user management (crud)
+    - search
     - MAILMAN package
 
 
