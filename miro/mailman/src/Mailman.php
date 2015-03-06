@@ -14,4 +14,8 @@
         {
             return get_class($this);
         }
+        public function goBack()
+        {
+            return \Redirect::to("/");
+        }
     }
