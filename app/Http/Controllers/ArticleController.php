@@ -89,9 +89,11 @@ class ArticleController extends Controller {
             if(is_null($result)){
                 return \Redirect::back()
                     ->with("search_error","Sorry, your search doesn't match any result. Please try again");
+            }else{
+
+                return \Redirect::back()
+                    ->with("result",$result);            
             }
-            return \Redirect::back()
-                ->with("result",$result);
         }else{
             dd($request->get("or_date_published"));
         }

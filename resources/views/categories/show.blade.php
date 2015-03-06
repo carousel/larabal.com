@@ -13,8 +13,8 @@
                             <br>
                     @if(Auth::check())
                         @if(Auth::user()->id == $article["user_id"])
-                        <span class="pull-right edit-link"><a href="admin/article/edit/{!!$article["id"]!!}">Edit</a></span>
-                        <span class="pull-right delete-link"><a href="admin/article/delete/{!!$article["id"]!!}">Delete</a></span>
+                        <span class="pull-right edit-link"><a href="/admin/article/edit/{!!$article["id"]!!}">Edit</a></span>
+                        <span class="pull-right delete-link"><a href="/admin/article/delete/{!!$article["id"]!!}">Delete</a></span>
                         @endif
                     @endif
                     <!--<span class="pull-right">author:&nbsp;{!!App\User::find($article->user_id)->name!!}</span>&nbsp;-->

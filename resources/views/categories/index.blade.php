@@ -39,7 +39,7 @@
             @if(count($categories) == 1)
                 <h3>{!!count($categories) . " article found in " . $tag . " category"!!}</h3>
             @endif
-            @if(count($categories) > 1))
+            @if(count($categories) > 1)
                 <h3>{!!count($categories) . " articles found in " . $tag . " category"!!}</h3>
             @endif
             <div class="row">
