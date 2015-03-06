@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,200italic,300italic,400italic,600italic,700italic);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,400,600,700,200italic,400italic,400italic,600italic,700italic);
 ul,li{
     font-family:"Source Sans Pro",sans-serif!important;
     font-weight:400!important;
@@ -8,6 +8,14 @@ span,p,a,label,button{
     font-family:"Source Sans Pro",sans-serif!important;
     font-weight:400!important;
     font-size:16px;
+
+}
+#banner>h1{
+    /*font-weight:300!important;*/
+
+}
+p.leader{
+    font-weight:300!important;
 
 }
 html{
@@ -27,7 +35,7 @@ h1,h2,h3,h4,h5{
 #banner{
     min-height:100px;
     font-family:"Source Sans Pro",sans-serif;
-    font-weight:400;
+    font-weight:200!important;
     width:100%;
     /*background:#777;*/
     margin-bottom:30px;
@@ -61,12 +69,12 @@ p.title{
     /*text-align:right;*/
 }
 span.edit-link a {
-    margin-left:10px!important;
+    margin-right:5px!important;
     color:red!important;
 }
 span.delete-link a{
+    margin-right:5px!important;
     color:red!important;
-    margin-bottom:10px;
 }
 pre.prettyprint{
     font-family:"Consolas";
@@ -95,7 +103,7 @@ span.advanced{
     padding-right:5px;
     border-bottom:5px solid red;
     /*border-radius:5px;*/
-    /*color:white;*/
+    color:red;
     font-weight:bold;
     /*background:red;*/
 }
@@ -135,7 +143,7 @@ th,td{
 .filter-by{
     text-align:center;
     margin-top:70px!important;
-    margin-bottom:30px!important;
+    margin-bottom:50px!important;
     /*width:10%!important;*/
 
 }
@@ -151,6 +159,16 @@ th,td{
 }
 .news-wrapper{
     background:#f8f8f8;
-    border:1px solid #ccf;
+    border:1px solid #e0e0e0;
     padding:10px;
+}
+.subscribe-input{
+    width:200px!important;
+}
+table{
+    border:1px solid #e0e0e0;
+}
+th{
+    background:#e7e7e7;
+    color:#444;
 }

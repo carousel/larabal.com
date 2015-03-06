@@ -43,8 +43,7 @@
 
         <ul class="nav navbar-nav navbar-right">
                 {!!Form::open(["url"=>"subscribe","class"=>"form-inline subscribe-form"])!!}
-                {!!Form::label("subscribe: ")!!}
-                {!!Form::email("email","",["class"=>"form-control","placeholder"=>"subscribe to our newsletter"])!!}
+                {!!Form::email("email","",["class"=>"form-control subscribe-input","placeholder"=>"subscribe to our newsletter"])!!}
                 <button type="submit" class="btn btn-success"><i class="glyphicon glyphicon-envelope"></i></button>
             {!!Form::close()!!}
             </li>

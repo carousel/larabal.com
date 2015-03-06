@@ -72,5 +72,11 @@
     - search
     - contact
     - MAILMAN package
+        - basic
+            - store locally all email traffic
+            - provide statistics
+        - advanced
+            - generae pdf
+
 
 

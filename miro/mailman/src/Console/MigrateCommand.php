@@ -5,21 +5,21 @@ use Illuminate\Foundation\Inspiring;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 
-class MailmanCommand extends Command {
+class MigrateCommand extends Command {
 
 	/**
 	 * The console command name.
 	 *
 	 * @var string
 	 */
-	protected $name = 'mailman';
+	protected $name = 'mailman:migrate';
 
 	/**
 	 * The console command description.
 	 *
 	 * @var string
 	 */
-	protected $description = 'Run mailman commands';
+	protected $description = 'Run mailman:migrate commands';
 
 	/**
 	 * Execute the console command.
@@ -28,8 +28,8 @@ class MailmanCommand extends Command {
 	 */
 	public function handle()
 	{
-        echo "This is mailman command handler" . PHP_EOL;
-		//$this->comment(PHP_EOL.Inspiring::quote().PHP_EOL);
+        $this->call("make:migration",["name"=>"create_mailman_table"]);
+        //\Artisan::call("migrate");
 	}
 
 }

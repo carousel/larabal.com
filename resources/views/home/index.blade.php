@@ -13,7 +13,9 @@
                     <h3 class="disqus_title">{!!$article["title"]!!}</h3>
                             <br>
                             <p class="disqus_body">
-                            {!!$article["body"]!!}
+                            @if($article["body"])
+                                {!!$article["body"]!!}
+                            @endif
                             </p>
                             <br>
                     @if(Auth::check())

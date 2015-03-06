@@ -29,4 +29,14 @@
         </ul>
     </div>
 @endif
+@if(\Session::has("search_error"))
+
+    <div class="alert alert-success alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <ul>
+            <li>{!!Session::get("search_error")!!}</li>
+        </ul>
+    </div>
+
+@endif
 

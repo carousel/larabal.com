@@ -12,7 +12,7 @@ class Kernel extends ConsoleKernel {
 	 */
 	protected $commands = [
 		'App\Console\Commands\Inspire',
-		'Miro\Mailman\Console\MailmanCommand'
+		'Miro\Mailman\Console\MigrateCommand'
 	];
 
 	/**

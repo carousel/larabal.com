@@ -26,9 +26,7 @@ class ArticleController extends Controller {
 	public function postCreate(Requests\CreateArticleRequest $request)
 	{
         $data = $request->all();
-        //$data["body"] = htmlspecialchars($data["body"]);
         $data["user_id"] = \Auth::user()->id;
-        //dd($data["body"]);
         \App\Article::create($data);
         return \Redirect::to("/");
 	}
@@ -83,9 +81,20 @@ class ArticleController extends Controller {
         $article = \App\Article::where("id",$id)->first();
         return view("categories.show",compact("article"));
     }
-    public function search(Request $request)
+    public function search(Requests\SearchRequest $request)
     {
-        dd($request->all());
+        $article = \App\Article::all();
+        if($request->get("search_by_title")){
+            $result = $article->where("title",$request->get("search_by_title"))->first();
+            if(is_null($result)){
+                return \Redirect::back()
+                    ->with("search_error","Sorry, your search doesn't match any result. Please try again");
+            }
+            return \Redirect::back()
+                ->with("result",$result);
+        }else{
+            dd($request->get("or_date_published"));
+        }
         
     }
 

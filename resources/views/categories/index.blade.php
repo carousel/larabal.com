@@ -5,10 +5,10 @@
 <div class="container">
     <div class="row filter-by">
         {!!Form::open(["url"=>"/search",""=>"","class"=>"form-inline"])!!}
-            {!!Form::label("search_by_title")!!}
+            {!!Form::label("search_by_title")!!}&nbsp;
             {!!Form::text("search_by_title","",["class"=>"form-control"])!!}
             &nbsp;
-            {!!Form::label("or_date_published")!!}
+            {!!Form::label("or_date_published")!!}&nbsp;
             {!!Form::select("or_date_published",["< week"=>"< week","< month"=>"< month","<  three months"=>"< three months"],"",["class"=>"form-control select"])!!}
 
             {!!Form::submit("Search",["class"=>"btn btn-success"])!!}
@@ -20,7 +20,7 @@
             <div class="row">
                 <br>
             </div>        
-            <table>
+            <table id="category-results">
                 <tr>
                     <th>Title</th>
                     <th>Published</th>
@@ -61,7 +61,6 @@
         @else
         <h3>No articles found in <em>{!!$tag !!}</em> category</h3>
         @endif
-
         @endif
     </div>
 @endsection

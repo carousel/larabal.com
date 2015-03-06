@@ -2,7 +2,7 @@
 @section("content")
     <div class="container">
         <div class="row category-match">
-            <div class="col-md-12 article" >
+            <div class="col-md-10" >
                 @if($article)
                 <span class="pull-right date">{!!$article["created_at"]->toFormattedDateString()!!}</span>
                     <h3 class="disqus_title">{!!$article["title"]!!}</h3>
