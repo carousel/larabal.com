@@ -66,17 +66,14 @@
         - subscriptions service (user can choose)
 
 #TODO
-    - format email view (with css) ?
-    - social?
-    - user management (crud)
     - search
-    - contact
+
     - MAILMAN package
         - basic
             - store locally all email traffic
             - provide statistics
         - advanced
-            - generae pdf
+            - generate pdf
 
 
 

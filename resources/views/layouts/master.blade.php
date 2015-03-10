@@ -14,7 +14,7 @@
 <div class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
-        <a href="/" class="navbar-brand">larabal.com</a>
+        <a href="/home" class="navbar-brand">larabal.com</a>
         <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>

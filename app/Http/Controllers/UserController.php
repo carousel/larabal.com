@@ -24,7 +24,7 @@ class UserController extends Controller {
         $subs->save();
 
         $this->userSubscribe($email);
-        return \Redirect::to("/")
+        return \Redirect::to("/home")
             ->with("message_success","You are subscribed to our newsletter. Check your email.");
     }
 
@@ -39,7 +39,7 @@ class UserController extends Controller {
         $email_unsub = \App\Subs::where("email",$email)->first();
         $email_id = $email_unsub->id;
 
-        $this->mailman->send('emails.subscribe',["email_id" => $email_id],function($message) use ( $email ){
+        $this->mailman->subscribe('emails.subscribe',["email_id" => $email_id],function($message) use ( $email ){
             $message->to($email)
                 ->subject("larabal.com subscription");
         });
@@ -63,7 +63,7 @@ class UserController extends Controller {
         $email = \App\Subs::where("id",$id)->first();
         $email->delete();
         return \Redirect::to("/")
-            ->with("message_success","You are unsubscribed from larabal.com newsletter.");
+            ->with("message_success","You are unsubscribed from larabal.com mailing list.");
 
     }
 

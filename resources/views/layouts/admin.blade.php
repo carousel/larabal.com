@@ -20,7 +20,7 @@
         <div class="navbar-collapse collapse" id="navbar-main">
         <ul class="nav navbar-nav">
             <li>
-                <a href="/">Home</a>
+                <a href="/home">larabal.com</a>
             </li>
             <li>
                 <a href="/admin/article/create">Write Article</a>

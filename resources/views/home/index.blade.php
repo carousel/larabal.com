@@ -66,7 +66,11 @@
                     @endforeach
                     </ul>
                 @else
-                    <p class="lead">No news yet</p>
+                    <ul class="news-wrapper">
+                        <li class="news-feed">
+                            <p class="lead">No news yet</p>
+                        </li>
+                    </ul>
                 @endif
 
             </div>

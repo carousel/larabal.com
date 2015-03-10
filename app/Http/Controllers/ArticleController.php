@@ -83,19 +83,38 @@ class ArticleController extends Controller {
     }
     public function search(Requests\SearchRequest $request)
     {
-        $article = \App\Article::all();
         if($request->get("search_by_title")){
-            $result = $article->where("title",$request->get("search_by_title"))->first();
-            if(is_null($result)){
+            $results = \App\Article::where("title",$request->get("search_by_title"))->get();
+            if(is_null($results)){
                 return \Redirect::back()
                     ->with("search_error","Sorry, your search doesn't match any result. Please try again");
             }else{
 
-                return \Redirect::back()
-                    ->with("result",$result);            
+                return view("categories.search")
+                        ->with("results",$results);            
             }
         }else{
-            dd($request->get("or_date_published"));
+            $input = $request->get("or_date_published");
+            if($input == "< week"){
+                $carbon = \Carbon\Carbon::now()->subWeek();
+                $results = \App\Article::where("created_at",">=",$carbon)->get();
+                return view("categories.search")
+                    ->with("results",$results);
+            };
+            if($input == "< month"){
+                $carbon = \Carbon\Carbon::now()->subMonth();
+                $results = \App\Article::where("created_at",">=",$carbon)->get();
+                return view("categories.search")
+                    ->with("results",$results);
+            };
+            
+            if($input == "< three months"){
+                $carbon = \Carbon\Carbon::now()->subMonths(3);
+                $results = \App\Article::where("created_at",">=",$carbon)->get();
+                return view("categories.search")
+                    ->with("results",$results);
+            };
+
         }
         
     }

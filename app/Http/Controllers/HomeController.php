@@ -14,14 +14,14 @@ class HomeController extends Controller {
 	public function getIndex()
 	{
         //container
-        $mailman = \App::make("mailman");
-        echo $mailman->getClassName() . "<br>";
+        //$mailman = \App::make("mailman");
+        //echo $mailman->getClassName() . "<br>";
         //facade(using namespace)
-        echo Mailman::getClassName() . "<br>";
+        //echo Mailman::getClassName() . "<br>";
         //facade /global
-        echo \Mailman::getClassName() . "<br>";
-        $mail = new Mail;
-        echo $mail->getClassName() . "<br>";
+        //echo \Mailman::getClassName() . "<br>";
+        //$mail = new Mail;
+        //echo $mail->getClassName() . "<br>";
         //command
         //\Artisan::call("mailman") . "<br>";
         //echo \Mailman::getClassName();
@@ -35,13 +35,15 @@ class HomeController extends Controller {
         //})->goBack();
         //return \App\Subs::all();
         //$date = Carbon::now()->toFormattedDateString();
-        //$article = \App\Article::orderBy("id","desc")->first();
-        //$news = \App\News::orderBy("id","desc")->limit(10)->get();
-        //$level = "";
-        //if($article){
-            //$level = $article->level ?: null;
-        //}
-        //return view('home.index',compact("article","level","news"));
+        $article = \App\Article::orderBy("id","desc")->first();
+        $news = \App\News::orderBy("id","desc")->limit(10)->get();
+        $level = "";
+        if($article){
+            $level = $article->level ?: null;
+        }
+        return view('home.index',compact("article","level","news"));
+        //return view('emails.subscribe')
+            //->with("email_id",1);
 
 	}
 }
