@@ -27,7 +27,7 @@
             You are now subscribed to our mailing list.
             <br>
             <br>
-            <span class="unsubscribe">To unsubscribe, please follow this link:&nbsp;<a href="http://larabal/users/unsubscribe/{!!$email_id!!}">unsubscribe</a></span>
+            <span class="unsubscribe">To unsubscribe, please follow this link:&nbsp;<a href="http://larabal.com/users/unsubscribe/{!!$email_id!!}">unsubscribe</a></span>
 
         </p>
     </div>
