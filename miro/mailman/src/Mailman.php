@@ -10,6 +10,12 @@
             \Mail::send($view,$message,$callback);        
             return $this;
         }
+        public function send($view,$message = [],$callback)
+        {
+            \Mail::send($view,$message,$callback);        
+            return $this;
+        }
+
         public function content()
         {
             $article =  \App\Article::orderBy("id","ASC")->first();
@@ -22,7 +28,7 @@
             return \Redirect::to("/");
         }
 
-        public function sendArticleToSubs()
+        public function sendToSubs()
         {
             $subs = \App\Subs::all();
             $title = $this->content();

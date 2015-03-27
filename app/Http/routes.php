@@ -1,6 +1,11 @@
 <?php
 
 
+Route::get('/','HomeController@getIndex');
+
+Route::get("/contact","HomeController@contactForm");
+Route::post("/contact","HomeController@contact");
+
 Route::get('/home','HomeController@getIndex');
 Route::post('/subscribe','UserController@subscribe');
 Route::get('/auth/login','Auth\AuthController@getLogin');
@@ -37,4 +42,5 @@ Route::group(["prefix" => "admin"],function()
     Route::get('/resources/delete/{id}','ResourcesController@getDelete');
 
     Route::get('/email','EmailController@getIndex');
+    Route::get('/send-to-subs','AdminController@sendToSubs');
 });

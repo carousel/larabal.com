@@ -1,9 +1,13 @@
 <?php namespace App\Http\Controllers;
 use Carbon\Carbon;
-use Miro\Mailman\Facades\Mailman;
-use Miro\Mailman\Mailman as Mail;
+use Miro\Mailman\Mailman;
 
 class HomeController extends Controller {
+
+    public function __construct(Mailman $mailman)
+    {
+        $this->mailman = $mailman;
+    }
 
 
 	/**
@@ -46,4 +50,33 @@ class HomeController extends Controller {
             //->with("email_id",1);
 
 	}
+    public function contactForm()
+    {
+        return view("contact.contact");
+    }
+
+    public function contact(\Illuminate\Http\Request $request)
+    {
+        $this->validate($request,$this->getRules());
+        $email = $request->get("email");
+        $subject = $request->get("subject");
+        $body = $request->get("body");
+        $this->mailman->send('emails.contact',["email"=>$email,"subject"=>$subject,"body"=>$body],function($message){
+            $message->to("miroslav.trninic@gmail.com")
+                ->subject("Message from larabal.com");
+        });
+
+
+        return \Redirect::to("/home")
+            ->with("message_success","Thanks, we will get back to you asap.");
+    }
+    public function getRules()
+    {
+        return [
+            "email" => "required",
+            "subject" => "required",
+            "body" => "required"
+        
+        ];
+    }
 }

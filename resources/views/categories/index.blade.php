@@ -4,7 +4,7 @@
     <div class="row filter-by">
         {!!Form::open(["url"=>"/search",""=>"","class"=>"form-inline"])!!}
             {!!Form::label("search_by_title")!!}&nbsp;
-            {!!Form::text("search_by_title","",["class"=>"form-control"])!!}
+            {!!Form::text("search_by_title","",["class"=>"form-control","placeholder"=>"enter title"])!!}
             &nbsp;
             {!!Form::label("or_date_published")!!}&nbsp;
             {!!Form::select("or_date_published",["< week"=>"< week","< month"=>"< month","<  three months"=>"< three months"],"",["class"=>"form-control select"])!!}
@@ -35,10 +35,10 @@
         @else
         @if(count($categories) > 0)
             @if(count($categories) == 1)
-                <h3>{!!count($categories) . " article found in " . $tag . " category"!!}</h3>
+            <h3>{!!count($categories) . " article found in <em>" . $tag . "</em> category"!!}</h3>
             @endif
             @if(count($categories) > 1)
-                <h3>{!!count($categories) . " articles found in " . $tag . " category"!!}</h3>
+            <h3>{!!count($categories) . " articles found in <em>" . $tag . "</em> category"!!}</h3>
             @endif
             <div class="row">
                 <br>

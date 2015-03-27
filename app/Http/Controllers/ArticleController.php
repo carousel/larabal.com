@@ -81,6 +81,8 @@ class ArticleController extends Controller {
         $article = \App\Article::where("id",$id)->first();
         return view("categories.show",compact("article"));
     }
+
+
     public function search(Requests\SearchRequest $request)
     {
         if($request->get("search_by_title")){

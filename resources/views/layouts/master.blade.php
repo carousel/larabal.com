@@ -37,7 +37,7 @@
             <a href="/resources">Resources</a>
             </li>
             <li>
-            <a href="mailto:miroslav.trninic@gmail.com">Contact</a>
+            <a href="/contact">Contact</a>
             </li>
         </ul>
 

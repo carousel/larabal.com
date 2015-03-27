@@ -12,7 +12,7 @@
                         </ul>
                     </div>
                 @endif
-                <h1>To be implemented</h1>
+                <a href="/admin/send-to-subs">Send Content To Subscribers</a>
             </div>
         </div>
 @stop

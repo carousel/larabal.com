@@ -2,19 +2,22 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Miro\Mailman\Mailman;
 
 use Illuminate\Http\Request;
 
 class AdminController extends Controller {
+
 
 	/**
 	 * Create a new controller instance.
 	 *
 	 * @return void
 	 */
-	public function __construct()
+	public function __construct(Mailman $mailman)
 	{
 		$this->middleware('auth');
+        $this->mailman = $mailman;
 	}
 
 	/**
@@ -24,7 +27,12 @@ class AdminController extends Controller {
 	 */
 	public function getIndex()
 	{
-		return view("admin.index");
+        $articles = \App\Article::all();
+        $count_articles = count($articles);
+        $subs = \App\Subs::all();
+        return view("admin.index")
+            ->with("count_articles",$count_articles)
+            ->with("subs",$subs);
 	}
 
 	/**
@@ -90,5 +98,11 @@ class AdminController extends Controller {
 	{
 		//
 	}
+    public function sendToSubs()
+    {
+        $this->mailman->sendToSubs();
+        return Redirect::back();
+        
+    }
 
 }

@@ -65,6 +65,7 @@
 <!-- Navbar
 ================================================== -->
         @yield("article-form")
+        @yield("content")
         @yield("news-form")
         <script src="//code.jquery.com/jquery.js"></script>
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
