@@ -35,11 +35,11 @@ Route::group(["prefix" => "admin"],function()
     Route::post('/news/edit/{id}','NewsController@postEdit');
     Route::get('/news/delete/{id}','NewsController@getDelete');
 
-    Route::get('/resources/create','ResourcesController@getCreate');
-    Route::post('/resources/create','ResourcesController@postCreate');
-    Route::get('/resources/edit/{id}','ResourcesController@getEdit');
-    Route::post('/resources/edit/{id}','ResourcesController@postEdit');
-    Route::get('/resources/delete/{id}','ResourcesController@getDelete');
+    Route::get('/resources/create','ResourceController@getCreate');
+    Route::post('/resources/create','ResourceController@postCreate');
+    Route::get('/resources/edit/{id}','ResourceController@getEdit');
+    Route::post('/resources/edit/{id}','ResourceController@postEdit');
+    Route::get('/resources/delete/{id}','ResourceController@getDelete');
 
     Route::get('/email','EmailController@getIndex');
     Route::get('/send-to-subs','EmailController@sendToSubs');
