@@ -1,5 +1,5 @@
 @extends("layouts.admin")
-@section("article-form")
+@section("post-form")
         <div class="container-fluid">
             <div class="page-header">
                 @if($errors->all())
@@ -12,11 +12,11 @@
                         </ul>
                     </div>
                 @endif
-                <h1>Write some article</h1>
-                <span>* wrap your code with <strong> {!!htmlspecialchars("</pre> ")!!}</strong>tag, and escape "&lt;/ and &gt;"</span>
+                <h1>Write a post</h1>
+                <span>* wrap your code with <strong> {!!htmlspecialchars("</pre> ")!!}</strong>tag</span>
                 <br>
                     <p>
-                        {!!Form::open(["url"=>"/admin/article/create","method"=>"POST"])!!}
+                        {!!Form::open(["url"=>"/admin/post/create","method"=>"POST"])!!}
                             {!!Form::label("Title")!!}
                             {!!Form::text("title","",["class"=>"form-control content"])!!}
                             <br>

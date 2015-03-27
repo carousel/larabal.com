@@ -27,11 +27,11 @@ class AdminController extends Controller {
 	 */
 	public function getIndex()
 	{
-        $articles = \App\Article::all();
-        $count_articles = count($articles);
+        $posts = \App\Post::all();
+        $count_posts = count($posts);
         $subs = \App\Subs::all();
         return view("admin.index")
-            ->with("count_articles",$count_articles)
+            ->with("count_posts",$count_posts)
             ->with("subs",$subs);
 	}
 
@@ -98,11 +98,5 @@ class AdminController extends Controller {
 	{
 		//
 	}
-    public function sendToSubs()
-    {
-        $this->mailman->sendToSubs();
-        return Redirect::back();
-        
-    }
 
 }

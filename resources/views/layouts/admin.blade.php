@@ -23,7 +23,7 @@
                 <a href="/home">larabal.com</a>
             </li>
             <li>
-                <a href="/admin/article/create">Write Article</a>
+                <a href="/admin/post/create">Write Post</a>
             </li>
             <li>
                 <a href="/admin/news/create">Add News</a>
@@ -32,7 +32,7 @@
                 <a href="/admin/resources/create">Add Resource</a>
             </li>
             <li>
-                <a href="/admin/users">Manage Users</a>
+                <a href="#">Manage Users</a>
             </li>
             <li>
                 <a href="/admin/email">Email</a>
@@ -64,7 +64,7 @@
 
 <!-- Navbar
 ================================================== -->
-        @yield("article-form")
+        @yield("post-form")
         @yield("content")
         @yield("news-form")
         <script src="//code.jquery.com/jquery.js"></script>

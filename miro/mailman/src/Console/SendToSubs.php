@@ -29,14 +29,10 @@ class SendToSubs extends Command {
 	 */
 	public function handle()
 	{
-        //$subs = \App\Subs::all();
-        //foreach($subs as $sub){
-            //$this->info($sub->email . "\n");
-        //}
+        $this->info("Sending post to subscribers");
         $mailman = new Mailman;
-        $mailman->sendArticleToSubs();
-        //$this->call("make:migration",["name"=>"create_mailman_table"]);
-        //\Artisan::call("migrate");
+        $mailman->sendToSubs();
+        $this->info("Post has been sent to subscribers");
 	}
 
 }

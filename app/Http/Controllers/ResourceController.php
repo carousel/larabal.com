@@ -2,10 +2,9 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
 use Illuminate\Http\Request;
 
-class ResourcesController extends Controller {
+class ResourceController extends Controller {
 	/**
 	 * Create a new controller instance.
 	 *

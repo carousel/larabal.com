@@ -5,7 +5,7 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-class ArticleController extends Controller {
+class PostController extends Controller {
 
 	/**
 	 * Create a new controller instance.
@@ -21,72 +21,72 @@ class ArticleController extends Controller {
 	public function getCreate()
 	{
 
-        return view("admin/articles/create");
+        return view("admin/post/create");
 	}
-	public function postCreate(Requests\CreateArticleRequest $request)
+	public function postCreate(Requests\CreatePostRequest $request)
 	{
         $data = $request->all();
         $data["user_id"] = \Auth::user()->id;
-        \App\Article::create($data);
+        \App\Post::create($data);
         return \Redirect::to("/");
 	}
 
 
     public function getEdit($id)
     {
-        $article = \App\Article::find($id);
-        if($article->user_id == \Auth::user()->id){
-            return view("admin/articles/edit")
-                ->with("article",$article);
+        $post = \App\Post::find($id);
+        if($post->user_id == \Auth::user()->id){
+            return view("admin/post/edit")
+                ->with("post",$post);
         }else{
             return \Redirect::to("/")
-                ->with("message","You are not authorized to edit this article");
+                ->with("message","You are not authorized to edit this post");
         }
     }
     public function postEdit($id)
     {
         $data = \Request::all();
         $user_id = \Auth::user()->id;
-        $article = \App\Article::where("id",$id)->first();
-        $article->title = $data["title"];
-        $article->tag = $data["tag"];
-        $article->body = $data["body"];
-        $article->level = $data["level"];
-        $article->user_id = $user_id;
-        $article->save();
+        $post = \App\Post::where("id",$id)->first();
+        $post->title = $data["title"];
+        $post->tag = $data["tag"];
+        $post->body = $data["body"];
+        $post->level = $data["level"];
+        $post->user_id = $user_id;
+        $post->save();
         return \Redirect::to("/");
 
     }
     public function getDelete($id)
     {
-        $article = \App\Article::where("id",$id)->first();
-        if($article->user_id == \Auth::user()->id){
-            $article->delete();
+        $post = \App\Post::where("id",$id)->first();
+        if($post->user_id == \Auth::user()->id){
+            $post->delete();
         }else{
             return \Redirect::to("/")
-                ->with("message","You are not authorized to delete this article");
+                ->with("message","You are not authorized to delete this post");
         }
             return \Redirect::to("/");
     }
 
     public function groupCategories($tag)
     {
-        $categories = \App\Article::where("tag",$tag)->get();
+        $categories = \App\Post::where("tag",$tag)->get();
         return view("categories.index")
             ->with("categories",$categories)
             ->with("tag",$tag);
     }
     public function show($id)
     {
-        $article = \App\Article::where("id",$id)->first();
-        return view("categories.show",compact("article"));
+        $post = \App\Post::where("id",$id)->first();
+        return view("categories.show",compact("post"));
     }
 
 
     public function search(Requests\SearchRequest $request)
     {
         if($request->get("search_by_title")){
-            $results = \App\Article::where("title",$request->get("search_by_title"))->get();
+            $results = \App\Post::where("title",$request->get("search_by_title"))->get();
             if(is_null($results)){
                 return \Redirect::back()
                     ->with("search_error","Sorry, your search doesn't match any result. Please try again");
@@ -99,20 +99,20 @@ class ArticleController extends Controller {
             $input = $request->get("or_date_published");
             if($input == "< week"){
                 $carbon = \Carbon\Carbon::now()->subWeek();
-                $results = \App\Article::where("created_at",">=",$carbon)->get();
+                $results = \App\Post::where("created_at",">=",$carbon)->get();
                 return view("categories.search")
                     ->with("results",$results);
             };
             if($input == "< month"){
                 $carbon = \Carbon\Carbon::now()->subMonth();
-                $results = \App\Article::where("created_at",">=",$carbon)->get();
+                $results = \App\Post::where("created_at",">=",$carbon)->get();
                 return view("categories.search")
                     ->with("results",$results);
             };
             
             if($input == "< three months"){
                 $carbon = \Carbon\Carbon::now()->subMonths(3);
-                $results = \App\Article::where("created_at",">=",$carbon)->get();
+                $results = \App\Post::where("created_at",">=",$carbon)->get();
                 return view("categories.search")
                     ->with("results",$results);
             };

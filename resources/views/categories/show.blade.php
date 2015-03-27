@@ -3,23 +3,23 @@
     <div class="container">
         <div class="row category-match">
             <div class="col-md-10" >
-                @if($article)
-                <span class="pull-right date">{!!$article["created_at"]->toFormattedDateString()!!}</span>
-                    <h3 class="disqus_title">{!!$article["title"]!!}</h3>
+                @if($post)
+                <span class="pull-right date">{!!$post["created_at"]->toFormattedDateString()!!}</span>
+                    <h3 class="disqus_title">{!!$post["title"]!!}</h3>
                             <br>
                             <p class="disqus_body">
-                            {!!$article["body"]!!}
+                            {!!$post["body"]!!}
                             </p>
                             <br>
                     @if(Auth::check())
-                        @if(Auth::user()->id == $article["user_id"])
-                        <span class="pull-right edit-link"><a href="/admin/article/edit/{!!$article["id"]!!}">Edit</a></span>
-                        <span class="pull-right delete-link"><a href="/admin/article/delete/{!!$article["id"]!!}">Delete</a></span>
+                        @if(Auth::user()->id == $post["user_id"])
+                        <span class="pull-right edit-link"><a href="/admin/post/edit/{!!$post["id"]!!}">Edit</a></span>
+                        <span class="pull-right delete-link"><a href="/admin/post/delete/{!!$post["id"]!!}">Delete</a></span>
                         @endif
                     @endif
-                    <!--<span class="pull-right">author:&nbsp;{!!App\User::find($article->user_id)->name!!}</span>&nbsp;-->
-                            <span>Level: <a href="#" class={!!$article["level"]!!}>{!!$article["level"]!!}</a></span>&nbsp;
-                            <span>Tag: <a href="/category/{!!$article["tag"]!!}">{!!$article["tag"]!!}</a></span>
+                    <!--<span class="pull-right">author:&nbsp;{!!App\User::find($post->user_id)->name!!}</span>&nbsp;-->
+                            <span>Level: <a href="#" class={!!$post["level"]!!}>{!!$post["level"]!!}</a></span>&nbsp;
+                            <span>Tag: <a href="/category/{!!$post["tag"]!!}">{!!$post["tag"]!!}</a></span>
                             <br>
                             <hr>
                             <div id="disqus_thread"></div>
@@ -38,7 +38,7 @@
     </script>
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
             @else
-                <p class="lead">No articles yet</p>
+                <p class="lead">No posts yet</p>
             @endif
             </div>
 

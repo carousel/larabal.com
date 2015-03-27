@@ -12,10 +12,10 @@ Route::get('/auth/login','Auth\AuthController@getLogin');
 Route::post('/auth/login','Auth\AuthController@postLogin');
 Route::get('/auth/logout','Auth\AuthController@getLogout');
 Route::get("/users/unsubscribe/{id}","UserController@unsubscribe");
-Route::get("/category/{tag}","ArticleController@groupCategories");
-Route::get("/category/show/{id}","ArticleController@show");
-Route::post("/search","ArticleController@search");
-Route::get("/resources","ResourcesController@getIndex");
+Route::get("/category/{tag}","PostController@groupCategories");
+Route::get("/category/show/{id}","PostController@show");
+Route::post("/search","PostController@search");
+Route::get("/resources","ResourceController@getIndex");
 
 Route::group(["prefix" => "admin"],function()
 {
@@ -23,11 +23,11 @@ Route::group(["prefix" => "admin"],function()
     Route::get("/","AdminController@getIndex");
     Route::get('/logout','Auth\AuthController@getLogout');
 
-    Route::get('/article/create','ArticleController@getCreate');
-    Route::post('/article/create','ArticleController@postCreate');
-    Route::get('/article/edit/{id}','ArticleController@getEdit');
-    Route::post('/article/edit/{id}','ArticleController@postEdit');
-    Route::get('/article/delete/{id}','ArticleController@getDelete');
+    Route::get('/post/create','PostController@getCreate');
+    Route::post('/post/create','PostController@postCreate');
+    Route::get('/post/edit/{id}','PostController@getEdit');
+    Route::post('/post/edit/{id}','PostController@postEdit');
+    Route::get('/post/delete/{id}','PostController@getDelete');
 
     Route::get('/news/create','NewsController@getCreate');
     Route::post('/news/create','NewsController@postCreate');
@@ -42,5 +42,5 @@ Route::group(["prefix" => "admin"],function()
     Route::get('/resources/delete/{id}','ResourcesController@getDelete');
 
     Route::get('/email','EmailController@getIndex');
-    Route::get('/send-to-subs','AdminController@sendToSubs');
+    Route::get('/send-to-subs','EmailController@sendToSubs');
 });

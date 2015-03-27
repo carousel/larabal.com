@@ -2,8 +2,8 @@
 @section("content")
 <br>
     <ul>
-        <p class="lead">Number of articles:</p>
-        <li style="list-style-type:none">Number of articles: {!!$count_articles!!}</li>    
+        <p class="lead">Number of postss:</p>
+        <li style="list-style-type:none">Number of postss: {!!$count_posts!!}</li>    
     </ul>
     <br>
     <ul>

@@ -16,10 +16,10 @@
             return $this;
         }
 
-        public function content()
+        public function latestPost()
         {
-            $article =  \App\Article::orderBy("id","ASC")->first();
-            return $article->title;
+            $post =  \App\Post::orderBy("id","DESC")->first();
+            return $post;
         }
 
 
@@ -31,16 +31,16 @@
         public function sendToSubs()
         {
             $subs = \App\Subs::all();
-            $title = $this->content();
+            $post = $this->latestPost();
             foreach($subs as $sub){
-                echo $sub->email . $title;
+                $email = $sub->email;
+                \Mail::send('admin.emails.content',["post"=>$post],function($message) use ( $email ){
+                    $message->to($email)
+                        ->subject("We have new post published on larabal.com");
+                });
             }
-            $message = "New article published on larabal.com";
-            $subject = "New article published on larabal.com - " . $title;
-            dd($subject . PHP_EOL);
-        //\Mail::send('emails.sendtosubs',[],function($message) use ( $email ){
-            //$message->to($email)
-                //->subject("New article published on larabal.com");
-        //});
+            return \Redirect::to("/")
+                ->with("message_success","Marketing email sent");
+
         }
     }
