@@ -35,7 +35,7 @@ class PostController extends Controller {
     public function getEdit($id)
     {
         $post = \App\Post::find($id);
-        if($post->user_id == \Auth::user()->id){
+        if($post->user_id == \Auth::user()->id || \Auth::user()->role == "admin+"){
             return view("admin/post/edit")
                 ->with("post",$post);
         }else{

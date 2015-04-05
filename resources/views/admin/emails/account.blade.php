@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Larabal.com subscription</title>
+        <title>New Larabal account</title>
         <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <style>
         .email{
@@ -16,18 +16,17 @@
         .unsubscribe{
             font-size:10px;
         }
+        .safe{
+            color:red; 
+        };
+
+
     </style>
     </head>
     <body>
     <div class="col-md-6 email">
-        <p>Hi,</p>
-            Welcome to <a href="http://larabal.com">larabal.com</a>
-            You are now subscribed to our mailing list.
-            <br>
-            <br>
-            <span class="unsubscribe">To unsubscribe, please follow this link:&nbsp;<a href="http://larabal.com/users/unsubscribe/{!!$email_id!!}">unsubscribe</a></span>
-
-        </p>
+        <p>Hi, your account on <a href="http:///larabal.com">larabal.com</a> has been created</p>
+        <p>Your password is: <span class="safe">{!!$plain_password!!}</span> Please keep it safe.</p>
     </div>
         <script src="//code.jquery.com/jquery.js"></script>
     </body>

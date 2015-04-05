@@ -16,22 +16,23 @@ class AppServiceProvider extends ServiceProvider {
     public function tags()
     {
         return $tags = [
-                "installation-configuration"=>"installation-configuration",
-                "request-input-session" => "request-input-session",
-                "security-auth" => "security-auth",
-                "routing-controllers" => "routing-controllers",
-                "errors-logging" => "errors-logging",
+                "installation configuration"=>"installation configuration",
+                "request input session" => "request input session",
+                "security auth" => "security auth",
+                "routing controllers" => "routing controllers",
+                "errors logging" => "errors logging",
                 "cache" => "cache",
                 "events" => "events",
-                "view-forms" => "view-forms",
-                "laravel internals" => "laravel internals",
+                "view forms" => "view forms",
                 "mail" => "mail",
                 "validation" => "validation",
-                "database-eloquent-migration" => "database-eloquent-migration",
+                "database eloquent migration" => "database eloquent migration",
                 "artisan cli" => "artisan cli",
                 "front end" => "front end",
+                "laravel internals" => "laravel internals",
                 "general PHP"=>"general PHP",
-                "general development"=>"general development"
+                "general development"=>"general development",
+                "other"=>"other"
             ];
         
     }

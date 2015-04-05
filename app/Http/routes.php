@@ -16,6 +16,7 @@ Route::get("/category/{tag}","PostController@groupCategories");
 Route::get("/category/show/{id}","PostController@show");
 Route::post("/search","PostController@search");
 Route::get("/resources","ResourceController@getIndex");
+Route::get("/news","NewsController@getNews");
 
 Route::group(["prefix" => "admin"],function()
 {
@@ -41,6 +42,7 @@ Route::group(["prefix" => "admin"],function()
     Route::post('/resources/edit/{id}','ResourceController@postEdit');
     Route::get('/resources/delete/{id}','ResourceController@getDelete');
 
-    Route::get('/email','EmailController@getIndex');
+    Route::get('/admin-plus','AdminController@getAdminPlusArea');
+    Route::post('/admin-plus/create-user','AdminController@createUser');
     Route::get('/send-to-subs','EmailController@sendToSubs');
 });

@@ -2,7 +2,7 @@
 @section("content")
     <div class="container">
         <div class="row category-match">
-            <div class="col-md-10" >
+            <div class="col-md-12" >
                 @if($post)
                 <span class="pull-right date">{!!$post["created_at"]->toFormattedDateString()!!}</span>
                     <h3 class="disqus_title">{!!$post["title"]!!}</h3>
@@ -12,7 +12,7 @@
                             </p>
                             <br>
                     @if(Auth::check())
-                        @if(Auth::user()->id == $post["user_id"])
+                        @if(Auth::user()->id === $post["user_id"] or \Auth::user()->role === "admin+")
                         <span class="pull-right edit-link"><a href="/admin/post/edit/{!!$post["id"]!!}">Edit</a></span>
                         <span class="pull-right delete-link"><a href="/admin/post/delete/{!!$post["id"]!!}">Delete</a></span>
                         @endif

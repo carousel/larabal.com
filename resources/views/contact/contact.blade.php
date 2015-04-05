@@ -5,7 +5,7 @@
 
 <div class="col-md-2"></div>
 <div class="col-md-8">
-    <p>If you have any questions of suggestions, please use this form to contact us:</p>
+    <p>We would like to hear your voice. If you have any questions of suggestions to make this site better, please use this form to contact us: </p>
     <br>
     {!!Form::open([])!!}
         {!!Form::label("email")!!}

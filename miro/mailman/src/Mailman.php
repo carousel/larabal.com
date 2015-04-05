@@ -34,7 +34,7 @@
             $post = $this->latestPost();
             foreach($subs as $sub){
                 $email = $sub->email;
-                \Mail::send('admin.emails.content',["post"=>$post],function($message) use ( $email ){
+                \Mail::send('admin.emails.content',["post"=>$post,"email_id"=>$sub->id],function($message) use ( $email ){
                     $message->to($email)
                         ->subject("We have new post published on larabal.com");
                 });

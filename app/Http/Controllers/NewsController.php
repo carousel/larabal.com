@@ -14,8 +14,14 @@ class NewsController extends Controller {
 	 */
 	public function __construct()
 	{
-        $this->middleware('auth');
+        $this->middleware('auth',['except' => ["getNews"]]);
 	}
+    public function getNews()
+    {
+        $news = \App\News::orderBy("id","DESC")->get();
+        return $news;
+        
+    }
 
 
 	public function getCreate()

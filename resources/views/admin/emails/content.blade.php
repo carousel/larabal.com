@@ -20,8 +20,10 @@
     </head>
     <body>
     <div class="col-md-6 email">
-        <p>Hi, thanks for flying with larabal. We have new post for this week. Check it out:
+        <p>Hi, thanks for flying with larabal. <br>
+        We have new post for this week. It is here:
         <a href="http:///larabal.com/category/show/{!!$post->id!!}">{!!$post->title!!}</a></p>
+            <span class="unsubscribe">To unsubscribe, please follow this link:&nbsp;<a href="http://larabal.com/users/unsubscribe/{!!$email_id!!}">unsubscribe</a></span>
     </div>
         <script src="//code.jquery.com/jquery.js"></script>
     </body>

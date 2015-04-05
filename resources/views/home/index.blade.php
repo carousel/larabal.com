@@ -7,7 +7,7 @@
 @section("content")
     <div class="container">
         <div class="row">
-            <div class="col-md-8 post" >
+            <div class="col-md-9 post" >
                 @if($post)
                 <span class="pull-right date">{!!$post["created_at"]->toFormattedDateString()!!}</span>
                     <h3 class="disqus_title">{!!$post["title"]!!}</h3>
@@ -19,7 +19,7 @@
                             </p>
                             <br>
                     @if(Auth::check())
-                        @if(Auth::user()->id == $post["user_id"])
+                        @if(Auth::user()->id === $post["user_id"] or \Auth::user()->role === "admin+")
                         <span class="pull-right edit-link"><a href="admin/post/edit/{!!$post["id"]!!}">Edit</a></span>
                         <span class="pull-right delete-link"><a href="admin/post/delete/{!!$post["id"]!!}">Delete</a></span>
                         @endif
@@ -49,15 +49,15 @@
             @endif
             </div>
 
-            <div class="col-md-3 col-md-offset-1 news">
-                <p class="lead news-heading">News around Laravel</p>
+            <div class="col-md-3">
+                <p class="lead news-heading">News</p>
                 @if(count($news))
                     <ul class="news-wrapper">
                     @foreach($news as $new)
                         <li class="news-feed">
                         <a href="{!!$new['href']!!}">{!!$new["description"]!!}</a>
                             @if(Auth::check())
-                                @if(Auth::user()->id == $new["user_id"])
+                        @if(Auth::user()->id == $new["user_id"] or \Auth::user()->role == "admin+")
                                 <span class="pull-right edit-link"><a href="admin/news/edit/{!!$new["id"]!!}">E</a></span>
                                 <span class="pull-right delete-link"><a href="admin/news/delete/{!!$new["id"]!!}">D</a></span>
                                 @endif

@@ -14,7 +14,7 @@
 <div class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
-        <a href="/home" class="navbar-brand">larabal.com</a>
+        <a href="/home" class="navbar-brand">Home</a>
         <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -24,7 +24,7 @@
         <div class="navbar-collapse collapse" id="navbar-main">
         <ul class="nav navbar-nav">
             <li class="dropdown">
-            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Categories<b class="caret"></b></a>
+            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Category<b class="caret"></b></a>
                 <ul class="dropdown-menu">
                     @foreach($tags as $tag)
                         <li>

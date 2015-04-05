@@ -66,8 +66,9 @@
         - subscriptions service (user can choose)
 
 #TODO
-    - contact
-    - email marketing
+    - style email messages
+    - edit users ?
+    - unsubscribe from post emails ? 
 
     - MAILMAN package
         - basic

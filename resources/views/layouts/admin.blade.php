@@ -18,26 +18,44 @@
         </button>
         </div>
         <div class="navbar-collapse collapse" id="navbar-main">
-        <ul class="nav navbar-nav">
-            <li>
-                <a href="/home">larabal.com</a>
-            </li>
-            <li>
-                <a href="/admin/post/create">Write Post</a>
-            </li>
-            <li>
-                <a href="/admin/news/create">Add News</a>
-            </li>
-            <li>
-                <a href="/admin/resources/create">Add Resource</a>
-            </li>
-            <li>
-                <a href="#">Manage Users</a>
-            </li>
-            <li>
-                <a href="/admin/email">Email</a>
-            </li>
-        </ul>
+            @if(\Auth::user()->role == "admin+")
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="/home">Home</a>
+                    </li>
+                    <li>
+                        <a href="/admin/post/create">Write Post</a>
+                    </li>
+                    <li>
+                        <a href="/admin/news/create">Add News</a>
+                    </li>
+                    <li>
+                        <a href="/admin/resources/create">Add Resource</a>
+                    </li>
+                    <li>
+                        <a href="/admin/admin-plus">Admin+</a>
+                    </li>
+                    <li>
+                        <a href="/admin">Admin</a>
+                    </li>
+                </ul>
+
+            @else
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="/home">Home</a>
+                    </li>
+                    <li>
+                        <a href="/admin/post/create">Write Post</a>
+                    </li>
+                    <li>
+                        <a href="/admin/news/create">Add News</a>
+                    </li>
+                    <li>
+                        <a href="/admin/resources/create">Add Resource</a>
+                    </li>
+                </ul>
+            @endif
 
         <ul class="nav navbar-nav navbar-right">
             <li><a href="/auth/login" class="login">Login</a></li>
