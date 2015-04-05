@@ -1,11 +1,10 @@
 @extends("layouts.master")
+@section("header")
+    @include("layouts.header")
+@stop
 @section("content")
-
-<br>
-
-<div class="col-md-2"></div>
-<div class="col-md-8">
-    <p>We would like to hear your voice. If you have any questions of suggestions to make this site better, please use this form to contact us: </p>
+<div class="container">
+    <p class="your-voice">We would like to hear your voice. If you have any questions of suggestions to make this site better, please use this form to contact us: </p>
     <br>
     {!!Form::open([])!!}
         {!!Form::label("email")!!}
@@ -21,4 +20,7 @@
 
 </div>
 
+@stop
+@section("footer")
+    @include("layouts.footer")
 @stop

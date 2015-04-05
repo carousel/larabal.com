@@ -26,7 +26,6 @@ html{
 body{
     font-family:"Source Sans Pro",sans-serif;
     font-weight:400;
-
 }
 h1,h2,h3,h4,h5{
     font-family:"Source Sans Pro",sans-serif;
@@ -37,8 +36,7 @@ h1,h2,h3,h4,h5{
     font-family:"Source Sans Pro",sans-serif;
     font-weight:200!important;
     width:100%;
-    /*background:#777;*/
-    margin-bottom:30px;
+    margin-bottom:50px;
     margin-top:10px;
     /*padding:10px;*/
     /*margin:0px;*/
@@ -56,7 +54,7 @@ a.logout {
     color:#f8f8f8;
     border-top-left-radius:5px;
     border-top-right-radius:5px;
-    background:#CC0033;
+    background:#CC0f55;
     text-align:center;
     font-weight:bold;
     font-size:18px;
@@ -145,7 +143,7 @@ th,td{
 }
 .filter-by{
     text-align:center;
-    margin-top:70px!important;
+    margin-top:50px!important;
     margin-bottom:50px!important;
     /*width:10%!important;*/
 
@@ -174,4 +172,12 @@ table{
 th{
     background:#e7e7e7;
     color:#444;
+}
+.your-voice{
+    margin-top:20px;
+    margin-bottom:30px;
+}
+.paypal{
+    text-align:center;
+    margin-top:30px;
 }

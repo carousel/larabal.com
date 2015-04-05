@@ -91,7 +91,6 @@ class PostController extends Controller {
                 return \Redirect::back()
                     ->with("search_error","Sorry, your search doesn't match any result. Please try again");
             }else{
-
                 return view("categories.search")
                         ->with("results",$results);            
             }

@@ -3,7 +3,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>larabal.com</title>
+        <title>Larabal.com - Laravel Balkan,news about Laravel and PHP</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
         
         <link rel = "stylesheet" href= "/bootstrap/css/bootswatch.min.css">
@@ -37,6 +37,9 @@
             <a href="/resources">Resources</a>
             </li>
             <li>
+            <a href="/about">About</a>
+            </li>
+            <li>
             <a href="/contact">Contact</a>
             </li>
         </ul>
@@ -49,8 +52,8 @@
             </li>
         </ul>
 
-        </div>
-        </div>
+                </div>
+            </div>
         </div>
         @include("_partials/messages")
         @yield("header")

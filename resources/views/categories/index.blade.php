@@ -1,4 +1,7 @@
 @extends("layouts.master")
+@section("header")
+    @include("layouts.header")
+@stop
 @section("content")
 <div class="container">
     <div class="row filter-by">

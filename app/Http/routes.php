@@ -2,6 +2,7 @@
 
 
 Route::get('/','HomeController@getIndex');
+Route::get('/about','HomeController@about');
 
 Route::get("/contact","HomeController@contactForm");
 Route::post("/contact","HomeController@contact");
