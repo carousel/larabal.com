@@ -1,5 +1,15 @@
 <?php
+use Miro\Mailman\Mailman;
 
+Route::get("/account",function()
+{
+    return view("contact");
+    //$mailman = new Mailman;
+    //$mailman->send('template',["email_id" => "12334"],function($message) {
+        //$message->to("miroslav.trninic@gmail.com")
+            //->subject("New account has been created");
+    //});
+});
 
 Route::get('/','HomeController@getIndex');
 Route::get('/about','HomeController@about');

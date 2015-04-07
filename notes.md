@@ -66,9 +66,9 @@
         - subscriptions service (user can choose)
 
 #TODO
+    - test,test, test
     - style email messages
     - edit users ?
-    - unsubscribe from post emails ? 
 
     - MAILMAN package
         - basic

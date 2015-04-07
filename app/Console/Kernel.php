@@ -13,7 +13,8 @@ class Kernel extends ConsoleKernel {
 	protected $commands = [
 		'App\Console\Commands\Inspire',
 		'Miro\Mailman\Console\SendToSubs',
-		'App\Console\Commands\AppStatusCommand'
+		'App\Console\Commands\AppStatusCommand',
+		'App\Console\Commands\TableTruncate'
 	];
 
 	/**
