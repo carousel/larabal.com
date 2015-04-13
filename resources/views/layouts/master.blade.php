@@ -46,8 +46,7 @@
 
         <ul class="nav navbar-nav navbar-right">
             <li class="twitter">
-<a href="https://twitter.com/larabalcom" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false">Follow</a>
-<script>!function(d,s){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+<a href="https://twitter.com/larabalcom" class="twitter-follow-button" data-show-count="false" data-size="large" data-show-screen-name="false">Follow @larabalcom</a>
             </li>
 
 
@@ -70,6 +69,7 @@
         <script src="//code.jquery.com/jquery.js"></script>
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
         <script src="/js/prettify.js"></script>
+        <script src="/js/twitter.js"></script>
         <script>
             /*$("pre").remove();*/
             $("pre").addClass("linenums prettyprint");
