@@ -45,6 +45,13 @@
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
+            <li class="twitter">
+<a href="https://twitter.com/larabalcom" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false">Follow</a>
+<script>!function(d,s){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+            </li>
+
+
+                <li>
                 {!!Form::open(["url"=>"subscribe","class"=>"form-inline subscribe-form"])!!}
                 {!!Form::email("email","",["class"=>"form-control subscribe-input","placeholder"=>"subscribe to our newsletter"])!!}
                 <button type="submit" class="btn btn-success"><i class="glyphicon glyphicon-envelope"></i></button>
