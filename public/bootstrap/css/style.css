@@ -49,7 +49,9 @@ a.logout {
     color:white!important;
 }
 .news-heading{
+    height:25px;
     color:#f8f8f8;
+    padding:3px;
     border-top-left-radius:5px;
     border-top-right-radius:5px;
     background:red;
@@ -158,7 +160,7 @@ th,td{
 }
 .news-wrapper{
     background:#f8f8f8;
-    border:1px solid #e0e0e0;
+    border:2px solid #e0e0e0;
     padding:10px;
 }
 .subscribe-input{

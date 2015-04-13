@@ -33,7 +33,7 @@ class AppServiceProvider extends ServiceProvider {
                 "testing" => "testing",
                 "general PHP"=>"general PHP",
                 "general development"=>"general development",
-                "other"=>"other"
+                "other topics"=>"other topics"
             ];
         
     }

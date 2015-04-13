@@ -50,7 +50,7 @@
             </div>
 
             <div class="col-md-3">
-                <p class="lead news-heading">News</p>
+                <p class="lead news-heading">News around laravel</p>
                 @if(count($news))
                     <ul class="news-wrapper">
                     @foreach($news as $new)
