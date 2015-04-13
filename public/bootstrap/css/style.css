@@ -12,6 +12,7 @@ span,p,a,label,button{
 }
 p.leader{
     font-weight:300!important;
+    color:gray;
 
 }
 html{
@@ -182,9 +183,19 @@ th{
     margin-top:30px;
 }
 .prettyprint{
-    font-size:16px;
+    font-size:14px;
+}
+pre span{
+    font-family:Courier!important;
+
 }
 li.twitter{
     margin-top:11px;
     margin-right:20px;
+}
+.post{
+    font-weight:30;
+}
+h3.disqus_title{
+    font-size:35px;
 }
