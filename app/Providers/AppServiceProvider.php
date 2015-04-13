@@ -7,9 +7,9 @@ class AppServiceProvider extends ServiceProvider {
     public function levels()
     {
         return $levels = [
-            "beginner" => "beginner",
+            "beginner"     => "beginner",
             "intermediate" => "intermediate",
-            "advanced" => "advanced"
+            "advanced"     => "advanced"
         ];
     }
 
@@ -30,6 +30,7 @@ class AppServiceProvider extends ServiceProvider {
                 "artisan cli" => "artisan cli",
                 "front end" => "front end",
                 "laravel internals" => "laravel internals",
+                "testing" => "testing",
                 "general PHP"=>"general PHP",
                 "general development"=>"general development",
                 "other"=>"other"

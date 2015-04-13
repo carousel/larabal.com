@@ -11,7 +11,7 @@ class AppStatusCommand extends Command {
 	 *
 	 * @var string
 	 */
-	protected $name = 'app:status';
+	protected $name = 'status';
 
 	/**
 	 * The console command description.

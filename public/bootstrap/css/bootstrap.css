@@ -1,6 +1,4 @@
-/*@import url("//fonts.googleapis.com/css?family=Open+Sans:400,700");*/
-/*@import url(http://fonts.googleapis.com/css?family=Vollkorn);*/
-@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,200italic,300italic);
+@import url("//fonts.googleapis.com/css?family=Open+Sans:400,700");
 /*!
  * bootswatch v3.3.2
  * Homepage: http://bootswatch.com
@@ -1074,8 +1072,8 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Source Sans Pro", sans-serif;
-  font-size: 14px;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
   line-height: 1.42857143;
   color: #777777;
   background-color: #fcfcfc;
@@ -1173,7 +1171,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 300;
   line-height: 1.1;
   color: #444444;
@@ -1212,7 +1210,7 @@ h2,
 .h2,
 h3,
 .h3 {
-  margin-top: -20px;
+  margin-top: 18px;
   margin-bottom: 9px;
 }
 h1 small,
@@ -4154,9 +4152,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-fixed-bottom {
   bottom: 0;
-  margin-bottom: 1%;
-  padding-left:40px;
-  padding-right:40px;
+  margin-bottom: 0;
   border-width: 1px 0 0;
 }
 .navbar-brand {
@@ -5827,7 +5823,7 @@ button.close {
   z-index: 1070;
   display: block;
   visibility: visible;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
   font-weight: normal;
   line-height: 1.4;
@@ -5934,7 +5930,7 @@ button.close {
   display: none;
   max-width: 276px;
   padding: 1px;
-  font-family: "Source Sans Pro",sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 13px;
   font-weight: normal;
   line-height: 1.42857143;
@@ -6569,7 +6565,7 @@ button.close {
   color: #d9230f;
 }
 .btn {
-    font-family:Source Sans Pro,sans-serif!important;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .btn-default,
 .btn-default:hover {

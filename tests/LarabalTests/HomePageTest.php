@@ -1,13 +1,12 @@
 <?php
 
-class ExampleTest extends TestCase {
+class HomePageTest extends TestCase {
 
 	/**
-	 * A basic functional test example.
-	 *
+	 * @test
 	 * @return void
 	 */
-	public function testBasicExample()
+	public function HomePage()
 	{
 		$response = $this->call('GET', '/');
 

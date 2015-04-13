@@ -3,7 +3,7 @@ use Miro\Mailman\Mailman;
 
 Route::get("/account",function()
 {
-    return view("contact");
+    return view("admin/emails/account");
     //$mailman = new Mailman;
     //$mailman->send('template',["email_id" => "12334"],function($message) {
         //$message->to("miroslav.trninic@gmail.com")

@@ -12,7 +12,6 @@
                 padding:5px;
                 text-align:center;
                 height:30px;
-	            background-color:#ccc;
             }
             .body{
                 margin-top:20px;
@@ -25,7 +24,6 @@
                 padding:6px;
                 height:30px;
                 text-align:center;
-	            background-color:#ccc;
             
             }
             

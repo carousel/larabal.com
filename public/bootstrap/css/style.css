@@ -1,16 +1,13 @@
-@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,400,600,700,200italic,400italic,400italic,600italic,700italic);
+/*@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,400,600,700,200italic,400italic,400italic,600italic,700italic);*/
+@import url(http://fonts.googleapis.com/css?family=Vollkorn);
 ul,li{
-    font-family:"Source Sans Pro",sans-serif!important;
+    font-family:"Vollkorn",sans-serif!important;
     font-weight:400!important;
 
 }
 span,p,a,label,button{
-    font-family:"Source Sans Pro",sans-serif!important;
+    font-family:"Vollkorn",sans-serif!important;
     font-weight:400!important;
-
-}
-#banner>h1{
-    /*font-weight:300!important;*/
 
 }
 p.leader{
@@ -18,30 +15,32 @@ p.leader{
 
 }
 html{
-    font-family:"Source Sans Pro",sans-serif;
+    font-family:"Vollkorn",sans-serif;
     font-weight:400;
+    font-size:16px;
 
 }
 body{
-    font-family:"Source Sans Pro",sans-serif;
+    font-family:"Vollkorn",sans-serif;
     font-weight:400;
+    font-size:16px;
 }
 h1,h2,h3,h4,h5{
-    font-family:"Source Sans Pro",sans-serif;
+    font-family:"Vollkorn",sans-serif;
     font-weight:400;
 }
 #banner{
     min-height:100px;
-    font-family:"Source Sans Pro",sans-serif;
-    font-weight:200!important;
     width:100%;
     margin-bottom:50px;
     margin-top:10px;
+    font-size:16px;
     /*padding:10px;*/
     /*margin:0px;*/
 }
 .article{
     padding:0px;
+    font-size:16px;
 }
 a.login {
     color:white!important;
@@ -53,10 +52,10 @@ a.logout {
     color:#f8f8f8;
     border-top-left-radius:5px;
     border-top-right-radius:5px;
-    background:#CC0f55;
+    background:red;
     text-align:center;
     font-weight:bold;
-    font-size:18px;
+    font-size:16px;
     margin-bottom:0px;
 }
 p.title{
@@ -179,4 +178,7 @@ th{
 .paypal{
     text-align:center;
     margin-top:30px;
+}
+.prettyprint{
+    font-size:16px;
 }
