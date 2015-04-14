@@ -27,8 +27,8 @@
                     <!--<span class="pull-right">author:&nbsp;{!!App\User::find($post->user_id)->name!!}</span>&nbsp;-->
                             Level:<span class={!!$post["level"]!!}>{!!$post["level"]!!}</span>&nbsp;
                             <span>Tag: <a href="/category/{!!$post["tag"]!!}">{!!$post["tag"]!!}</a></span>
-                            <br>
-                            <hr>
+<br>
+<hr>
                             <div id="disqus_thread"></div>
     <script type="text/javascript">
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
@@ -75,6 +75,11 @@
 
             </div>
         </div>
+<hr>
+        <ul class="pager">
+            <li class="previous"><a href="#">&#10092;Previous post</a></li>    
+            <li class="next"><a href="#">Next post&#10093;</a></li>    
+        </ul>
     </div>
   <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
@@ -102,12 +107,7 @@
   ga('send', 'pageview');
 
 </script>
-
-
-
-
 @stop
-
 @section("footer")
     @include("layouts.footer")
 @stop

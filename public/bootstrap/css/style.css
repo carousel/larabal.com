@@ -55,7 +55,7 @@ a.logout {
     padding:3px;
     border-top-left-radius:5px;
     border-top-right-radius:5px;
-    background:red;
+    background:#f4645f;
     text-align:center;
     font-weight:bold;
     font-size:16px;
@@ -198,4 +198,26 @@ li.twitter{
 }
 h3.disqus_title{
     font-size:35px;
+}
+.pager{
+}
+li.previous>a{
+    color:#fff;
+    background:#f4645f;
+    border:1px solid #ccc;
+}
+li.next>a{
+    color:#fff;
+    background:#f4645f;
+    border:1px solid #ccc;
+}
+li.previous>a:hover{
+    background:#fff;
+    color:#f4645f;
+    border:1px solid #000;
+}
+li.next>a:hover{
+    background:#fff;
+    color:#f4645f;
+    border:1px solid #000;
 }
