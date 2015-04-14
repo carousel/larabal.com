@@ -14,3 +14,16 @@ window.twttr = (function(d, s, id) {
  
   return t;
 }(document, "script", "twitter-wjs"));
+
+$(".delete-link").on("click",function(e){
+    var action = confirm("Are you sure you want to delete this?");
+    if(action === false){
+        e.preventDefault();
+    }
+});
+$(".edit-link").on("click",function(e){
+    var action = confirm("Are you sure you want to edit this?");
+    if(action === false){
+        e.preventDefault();
+    }
+});
