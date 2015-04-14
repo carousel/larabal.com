@@ -79,7 +79,19 @@ class PostController extends Controller {
     public function show($id)
     {
         $post = \App\Post::where("id",$id)->first();
-        return view("categories.show",compact("post"));
+        $news = \App\News::orderBy("id","desc")->limit(10)->get();
+        if($post){
+            return view("categories.show",compact("post","news"));
+        }else{
+            return Redirect::back();
+        }
+    }
+    /**
+    * 
+    */
+    public function paginate()
+    {
+        
     }
 
 

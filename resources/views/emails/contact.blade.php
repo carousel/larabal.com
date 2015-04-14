@@ -18,7 +18,7 @@
                 margin-bottom:20px;
                 height:100%;
                 padding:40px;
-	            background-color:#ECF8FF;
+	            background-color:#ccc;
             }
             .footer{
                 padding:6px;

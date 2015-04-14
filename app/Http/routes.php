@@ -16,6 +16,8 @@ Route::get('/about','HomeController@about');
 
 Route::get("/contact","HomeController@contactForm");
 Route::post("/contact","HomeController@contact");
+Route::get("/prev/{id}","PostController@prevPost");
+Route::get("/next/{id}","PostController@nextPost");
 
 Route::get('/home','HomeController@getIndex');
 Route::post('/subscribe','UserController@subscribe');

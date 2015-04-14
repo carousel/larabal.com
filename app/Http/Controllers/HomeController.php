@@ -39,11 +39,13 @@ class HomeController extends Controller {
         //})->goBack();
         //return \App\Subs::all();
         //$date = Carbon::now()->toFormattedDateString();
-        $post = \App\Post::orderBy("id","desc")->first();
+        $post = \App\Post::orderBy("id","DESC")->paginate(1);
+        //dd($post[0]->created_at);
+        //$post_level = \App\Post::orderBy("id","desc")->first();
         $news = \App\News::orderBy("id","desc")->limit(10)->get();
         $level = "";
-        if($post){
-            $level = $post->level ?: null;
+        if($post[0]){
+            $level = $post[0]->level ?: null;
         }
         return view('home.index',compact("post","level","news"));
         //return view('emails.subscribe')

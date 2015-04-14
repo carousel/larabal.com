@@ -66,6 +66,7 @@
         - subscriptions service (user can choose)
 
 #TODO
+    - previous/next functionality
     - test,test, test
     - style email messages
     - edit users ?

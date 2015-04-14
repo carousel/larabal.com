@@ -8,27 +8,26 @@
     <div class="container">
         <div class="row">
             <div class="col-md-9 post" >
-                @if($post)
-                <span class="pull-right date">{!!$post["created_at"]->toFormattedDateString()!!}</span>
-                    <h3 class="disqus_title">{!!$post["title"]!!}</h3>
+                @if($post[0])
+                <span class="pull-right date">{!!$post[0]->created_at->toFormattedDateString()!!}</span>
+                    <h3 class="disqus_title">{!!$post[0]->title!!}</h3>
                             <br>
                             <p class="disqus_body">
-                            @if($post["body"])
-                                {!!$post["body"]!!}
+                            @if($post[0]->body)
+                                {!!$post[0]->body!!}
                             @endif
                             </p>
                             <br>
                     @if(Auth::check())
-                        @if(Auth::user()->id === $post["user_id"] or \Auth::user()->role === "admin+")
-                        <span class="pull-right edit-link"><a href="admin/post/edit/{!!$post["id"]!!}">Edit</a></span>
-                        <span class="pull-right delete-link"><a href="admin/post/delete/{!!$post["id"]!!}">Delete</a></span>
+                        @if(Auth::user()->id === $post[0]->user_id or \Auth::user()->role === "admin+")
+                        <span class="pull-right edit-link"><a href="admin/post/edit/{!!$post[0]->id!!}">Edit</a></span>
+                        <span class="pull-right delete-link"><a href="admin/post/delete/{!!$post[0]->id!!}">Delete</a></span>
                         @endif
                     @endif
-                    <!--<span class="pull-right">author:&nbsp;{!!App\User::find($post->user_id)->name!!}</span>&nbsp;-->
-                            Level:<span class={!!$post["level"]!!}>{!!$post["level"]!!}</span>&nbsp;
-                            <span>Tag: <a href="/category/{!!$post["tag"]!!}">{!!$post["tag"]!!}</a></span>
-<br>
-<hr>
+                    <!--<span class="pull-right">author:&nbsp;{!!App\User::find($post[0]->user_id)->name!!}</span>&nbsp;-->
+                            Level:<span class={!!$post[0]->level!!}>{!!$post[0]->level!!}</span>&nbsp;
+                            <span>Tag: <a href="/category/{!!$post[0]->tag!!}">{!!$post[0]->tag!!}</a></span>
+        <div class="paginator">{!!$post->render()!!}</div>
                             <div id="disqus_thread"></div>
     <script type="text/javascript">
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
@@ -76,10 +75,6 @@
             </div>
         </div>
 <hr>
-        <ul class="pager">
-            <li class="previous"><a href="#">&#10092;Previous post</a></li>    
-            <li class="next"><a href="#">Next post&#10093;</a></li>    
-        </ul>
     </div>
   <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */

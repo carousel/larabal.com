@@ -199,25 +199,58 @@ li.twitter{
 h3.disqus_title{
     font-size:35px;
 }
-.pager{
+/*.pager{*/
+    /*position:relative;*/
+    /*bottom:-100px;*/
+/*}*/
+
+
+/*li.previous>a{*/
+    /*color:#fff;*/
+    /*background:#f4645f;*/
+    /*border:1px solid #ccc;*/
+/*}*/
+/*li.next>a{*/
+    /*color:#fff;*/
+    /*background:#f4645f;*/
+    /*border:1px solid #ccc;*/
+/*}*/
+/*li.previous>a:visited{*/
+    /*color:#fff;*/
+    /*background-color:#f4645f;*/
+    /*border:1px solid #000;*/
+/*}*/
+/*li.next>a:visited{*/
+    /*color:#fff;*/
+    /*background-color:#f4645f;*/
+    /*border:1px solid #000;*/
+/*}*/
+/*li.previous>a:hover{*/
+    /*background:#fff;*/
+    /*color:#f4645f;*/
+    /*border:1px solid #000;*/
+/*}*/
+/*li.next>a:hover{*/
+    /*background:#fff;*/
+    /*color:#f4645f;*/
+    /*border:1px solid #000;*/
+/*}*/
+/*li.previous>a:active{*/
+    /*background:#fff;*/
+    /*color:#f4645f;*/
+    /*border:1px solid #000;*/
+/*}*/
+/*li.next>a:active{*/
+    /*color:#fff;*/
+    /*background:#f4645f;*/
+    /*border:1px solid #000;*/
+/*}*/
+.paginator{
+    margin:15px;
+    text-align:center;
 }
-li.previous>a{
-    color:#fff;
-    background:#f4645f;
-    border:1px solid #ccc;
-}
-li.next>a{
-    color:#fff;
-    background:#f4645f;
-    border:1px solid #ccc;
-}
-li.previous>a:hover{
-    background:#fff;
-    color:#f4645f;
-    border:1px solid #000;
-}
-li.next>a:hover{
-    background:#fff;
-    color:#f4645f;
-    border:1px solid #000;
+.pagination li.active span{
+    background-color:#f4645f!important;
+    border:none;
+
 }

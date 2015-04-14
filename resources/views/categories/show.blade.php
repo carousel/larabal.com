@@ -5,7 +5,7 @@
 @section("content")
     <div class="container">
         <div class="row category-match">
-            <div class="col-md-12" >
+            <div class="col-md-9" >
                 @if($post)
                 <span class="pull-right date">{!!$post["created_at"]->toFormattedDateString()!!}</span>
                     <h3 class="disqus_title">{!!$post["title"]!!}</h3>
@@ -45,7 +45,37 @@
             @endif
             </div>
 
+            <div class="col-md-3">
+                <p class="lead news-heading">News around laravel</p>
+                @if(count($news))
+                    <ul class="news-wrapper">
+                    @foreach($news as $new)
+                        <li class="news-feed">
+                        <a href="{!!$new['href']!!}">{!!$new["description"]!!}</a>
+                            @if(Auth::check())
+                        @if(Auth::user()->id == $new["user_id"] or \Auth::user()->role == "admin+")
+                                <span class="pull-right edit-link"><a href="admin/news/edit/{!!$new["id"]!!}">E</a></span>
+                                <span class="pull-right delete-link"><a href="admin/news/delete/{!!$new["id"]!!}">D</a></span>
+                                @endif
+                            @endif
+                        </li>
+                    @endforeach
+                    </ul>
+                @else
+                    <ul class="news-wrapper">
+                        <li class="news-feed">
+                            <p class="lead">No news yet</p>
+                        </li>
+                    </ul>
+                @endif
+
+            </div>
+
         </div>
+        <ul class="pager">
+            <li class="previous"><a href="#">&#10092;Previous post</a></li>    
+            <li class="next"><a href="#">Next post&#10093;</a></li>    
+        </ul>
     </div>
   <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
