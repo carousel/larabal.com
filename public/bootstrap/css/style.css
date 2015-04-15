@@ -10,11 +10,6 @@ span,p,a,label,button{
     font-weight:400!important;
 
 }
-p.leader{
-    font-weight:300!important;
-    color:gray;
-
-}
 html{
     font-family:"Vollkorn",sans-serif;
     font-weight:400;
@@ -29,14 +24,21 @@ body{
 h1,h2,h3,h4,h5{
     font-family:"Vollkorn",sans-serif;
     font-weight:400;
+    margin-bottom:0px;
+}
+p.leader{
+    font-weight:300!important;
+    color:#ccc;
 }
 #banner{
+    background-image:url("../img/gray.jpg")!important;
     min-height:100px;
     width:100%;
     margin-bottom:50px;
     margin-top:10px;
+    color:#ccc;
     font-size:16px;
-    /*padding:10px;*/
+    padding:50px;
     /*margin:0px;*/
 }
 .article{
@@ -253,4 +255,7 @@ h3.disqus_title{
     background-color:#f4645f!important;
     border:none;
 
+}
+.banner{
+    margin-top:0px;
 }

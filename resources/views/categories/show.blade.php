@@ -72,10 +72,6 @@
             </div>
 
         </div>
-        <ul class="pager">
-            <li class="previous"><a href="#">&#10092;Previous post</a></li>    
-            <li class="next"><a href="#">Next post&#10093;</a></li>    
-        </ul>
     </div>
   <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
