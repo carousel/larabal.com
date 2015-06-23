@@ -28,6 +28,7 @@
                             Level:<span class={!!$post[0]->level!!}>{!!$post[0]->level!!}</span>&nbsp;
                             <span>Tag: <a href="/category/{!!$post[0]->tag!!}">{!!$post[0]->tag!!}</a></span>
         <div class="paginator">{!!$post->render()!!}</div>
+<br>
                             <div id="disqus_thread"></div>
     <script type="text/javascript">
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */

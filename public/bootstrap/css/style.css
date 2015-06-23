@@ -8,18 +8,19 @@ ul,li{
 span,p,a,label,button{
     font-family:"Vollkorn",sans-serif!important;
     font-weight:400!important;
+    font-size:18px;
 
 }
 html{
     font-family:"Vollkorn",sans-serif;
     font-weight:400;
-    font-size:16px;
+    font-size:18px;
 
 }
 body{
     font-family:"Vollkorn",sans-serif;
     font-weight:400;
-    font-size:16px;
+    font-size:18px;
 }
 h1,h2,h3,h4,h5{
     font-family:"Vollkorn",sans-serif;
@@ -82,6 +83,7 @@ span.delete-link a{
 }
 pre.prettyprint{
     font-family:"Consolas";
+    font-size:18px;
 }
 span.beginner{
 
@@ -185,7 +187,7 @@ th{
     margin-top:30px;
 }
 .prettyprint{
-    font-size:14px;
+    font-size:18px;
 }
 pre span{
     font-family:Courier!important;

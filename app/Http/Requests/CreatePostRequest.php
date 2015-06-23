@@ -22,7 +22,7 @@ class CreatePostRequest extends Request {
 	public function rules()
 	{
 		return [
-			"title" => "required|unique:articles",
+			"title" => "required|unique:posts",
 			"body" => "required",
 			"tag"     => "required",
 			"level"   => "required",

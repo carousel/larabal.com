@@ -7,22 +7,19 @@
             @if(Auth::user())
                 <ul class="list-unstyled pull-right">
                     @if(Auth::user()->role == "user")
-                        <li><a href="/auth/logout" >Logout</a></li>
+                        <li><a href="/auth/logout" >logout</a></li>
                     @endif
                     @if(Auth::user()->role == "admin")
                         <li><a href="/admin" >{!!Auth::user()->role!!}</a></li>
-                        <li><a href="/auth/logout" >Logout</a></li>
+                        <li><a href="/auth/logout" >logout</a></li>
                     @endif
                     @if(Auth::user()->role == "admin+")
                         <li><a href="/admin" >{!!Auth::user()->role!!}</a></li>
-                        <li><a href="/auth/logout" >Logout</a></li>
+                        <li><a href="/auth/logout" >logout</a></li>
                     @endif
                 </ul>
             @endif
-        </div>
-        
-        
-        
+            </div>
         </div>
     </div>
 </footer>
