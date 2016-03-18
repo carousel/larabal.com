@@ -1,45 +1,49 @@
 /*@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,400,600,700,200italic,400italic,400italic,600italic,700italic);*/
-@import url(http://fonts.googleapis.com/css?family=Vollkorn);
+
+/*@import url(http://fonts.googleapis.com/css?family=Vollkorn);*/
+@import url(https://fonts.googleapis.com/css?family=EB+Garamond);
 ul,li{
-    font-family:"Vollkorn",sans-serif!important;
+    font-family: 'EB Garamond', serif;
     font-weight:400!important;
 
 }
 span,p,a,label,button{
-    font-family:"Vollkorn",sans-serif!important;
+    font-family: 'EB Garamond', serif;
     font-weight:400!important;
     font-size:18px;
 
 }
 html{
-    font-family:"Vollkorn",sans-serif;
-    font-weight:400;
-    font-size:18px;
+    font-family: 'EB Garamond', serif;
+    /*font-weight:400;*/
+    /*font-size:18px;*/
 
 }
 body{
-    font-family:"Vollkorn",sans-serif;
-    font-weight:400;
-    font-size:18px;
+    font-family: 'EB Garamond', serif;
+    /*font-weight:400;*/
+    /*font-size:18px;*/
 }
 h1,h2,h3,h4,h5{
-    font-family:"Vollkorn",sans-serif;
+    font-family: 'EB Garamond', serif;
     font-weight:400;
     margin-bottom:0px;
 }
 p.leader{
-    font-weight:300!important;
-    color:#ccc;
+    /*position:fixed;*/
+    /*font-weight:300!important;*/
+    /*color:#ccc;*/
 }
 #banner{
-    background-image:url("../img/gray.jpg")!important;
-    min-height:100px;
-    width:100%;
-    margin-bottom:50px;
-    margin-top:10px;
-    color:#ccc;
-    font-size:16px;
-    padding:50px;
+    /*position:fixed;*/
+    /*background-image:url("../img/gray.jpg")!important;*/
+    min-height:130px;
+    /*width:100%;*/
+    /*margin-bottom:50px;*/
+    /*margin-top:10px;*/
+    /*color:#ccc;*/
+    /*font-size:16px;*/
+    /*padding:50px;*/
     /*margin:0px;*/
 }
 .article{
@@ -191,7 +195,6 @@ th{
 }
 pre span{
     font-family:Courier!important;
-
 }
 li.twitter{
     margin-top:11px;

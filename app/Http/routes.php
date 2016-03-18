@@ -1,14 +1,8 @@
 <?php
-use Miro\Mailman\Mailman;
 
-Route::get("/account",function()
+Route::get("/ipn",function()
 {
-    return view("admin/emails/account");
-    //$mailman = new Mailman;
-    //$mailman->send('template',["email_id" => "12334"],function($message) {
-        //$message->to("miroslav.trninic@gmail.com")
-            //->subject("New account has been created");
-    //});
+    require public_path() . '/paypal_ipn.php';
 });
 
 Route::get('/','HomeController@getIndex');
